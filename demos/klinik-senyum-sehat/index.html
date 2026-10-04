@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinik Senyum Sehat — Perawatan Gigi Ramah Keluarga</title>
+  <meta name="description" content="Klinik gigi keluarga di Bandung. Perawatan gigi ramah, nyaman, dan terjangkau. Booking via WhatsApp atau telepon.">
+
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/tailwind.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../assets/css/color-tester.css">
+</head>
+<body class="font-body antialiased text-brand-text">
+
+  <!-- Badge Demo -->
+  <div class="bg-brand-primary text-white text-center text-xs py-1.5 font-medium">
+    Demo Portofolio Masyubi · Konsep fiktif untuk ilustrasi
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-accent">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-brand-primary rounded-full flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </div>
+        <span class="font-heading font-extrabold text-brand-primary text-lg">Senyum<span class="text-brand-secondary">Sehat</span></span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-brand-muted">
+        <li><a href="#layanan" class="hover:text-brand-primary transition">Layanan</a></li>
+        <li><a href="#hasil" class="hover:text-brand-primary transition">Hasil</a></li>
+        <li><a href="#dokter" class="hover:text-brand-primary transition">Dokter</a></li>
+        <li><a href="#proses" class="hover:text-brand-primary transition">Proses</a></li>
+        <li><a href="#faq" class="hover:text-brand-primary transition">FAQ</a></li>
+        <li><a href="#lokasi" class="hover:text-brand-primary transition">Lokasi</a></li>
+      </ul>
+
+      <div class="hidden md:flex items-center gap-2">
+        <a href="tel:+62811142"
+           class="inline-flex items-center gap-2 bg-white border border-brand-accent hover:border-brand-primary text-brand-primary text-sm font-semibold px-4 py-2.5 rounded-full transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Telepon
+        </a>
+        <a href="https://wa.me/62811142?text=Halo%20Klinik%20Senyum%20Sehat%2C%20saya%20mau%20booking"
+           class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-secondary text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Booking
+        </a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-brand-text p-2 -mr-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-5 space-y-1 text-sm border-t border-brand-accent pt-3">
+      <a href="#layanan" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Layanan</a>
+      <a href="#hasil" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Hasil</a>
+      <a href="#dokter" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Dokter</a>
+      <a href="#proses" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Proses</a>
+      <a href="#faq" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">FAQ</a>
+      <a href="#lokasi" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Lokasi</a>
+      <div class="flex gap-2 mt-3">
+        <a href="tel:+62811142" class="flex-1 text-center border border-brand-primary text-brand-primary py-2.5 rounded-full font-semibold">Telepon</a>
+        <a href="https://wa.me/62811142" class="flex-1 text-center bg-brand-primary text-white py-2.5 rounded-full font-semibold">Booking</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO (DIPERBARUI) ============ -->
+  <section class="hero-gradient">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 bg-white border border-brand-accent text-brand-text text-xs font-medium px-3 py-1.5 rounded-full mb-5">
+          <span class="w-2 h-2 bg-brand-secondary rounded-full animate-pulse"></span>
+          Buka Senin–Sabtu · 09.00–20.00
+        </span>
+
+        <h1 class="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl leading-tight text-brand-text mb-5">
+          Senyum sehat untuk <span class="text-brand-primary">seluruh keluarga</span>.
+        </h1>
+
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-7 max-w-lg">
+          Perawatan gigi yang ramah, nyaman, dan terjangkau. Dari scaling rutin sampai pasang kawat — semua ditangani dokter berpengalaman.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20booking%20perawatan"
+             class="inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-secondary text-white font-semibold px-6 py-3.5 rounded-full transition w-full sm:w-auto">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Booking via WhatsApp
+          </a>
+          <a href="tel:+62811142"
+             class="inline-flex items-center justify-center gap-2 bg-white border border-brand-accent hover:border-brand-primary text-brand-text font-semibold px-6 py-3.5 rounded-full transition w-full sm:w-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Telepon Langsung
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-5 mt-7 text-sm text-brand-muted">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Terima BPJS & Asuransi
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-brand-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Bisa Cicil 0%
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: kartu ilustrasi -->
+      <div class="hero-visual rounded-3xl border border-brand-accent bg-white/60 p-8 min-h-[320px] flex items-center justify-center">
+        <div class="text-center">
+          <div class="w-24 h-24 mx-auto bg-brand-primary rounded-full flex items-center justify-center mb-5 shadow-lg">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+          </div>
+          <p class="font-heading font-bold text-brand-primary text-lg">Jadwal Tersedia</p>
+          <p class="text-brand-muted text-sm mt-1">Slot hari ini masih ada 3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============ TRUST BAR (DIPERBARUI) ============ -->
+  <section class="bg-white border-y border-brand-accent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
+      <div>
+        <p class="font-heading font-extrabold text-3xl text-brand-primary">8+</p>
+        <p class="text-brand-muted text-sm mt-0.5">Tahun Melayani</p>
+      </div>
+      <div>
+        <p class="font-heading font-extrabold text-3xl text-brand-primary">5.000+</p>
+        <p class="text-brand-muted text-sm mt-0.5">Pasien Puas</p>
+      </div>
+      <div>
+        <p class="font-heading font-extrabold text-3xl text-brand-primary">4</p>
+        <p class="text-brand-muted text-sm mt-0.5">Dokter Gigi</p>
+      </div>
+      <div>
+        <p class="font-heading font-extrabold text-3xl text-brand-primary">4.9</p>
+        <p class="text-brand-muted text-sm mt-0.5">Rating Google</p>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <p class="font-heading font-extrabold text-3xl text-brand-primary">BPJS</p>
+        <p class="text-brand-muted text-sm mt-0.5">+ 6 Asuransi</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE & AFTER GALLERY (BARU) ============ -->
+  <section id="hasil" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+      <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">Hasil Nyata</span>
+      <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-3">Sebelum & Sesudah</h2>
+      <p class="text-brand-muted text-sm sm:text-base">Beberapa hasil perawatan pasien kami. Semua foto dengan izin pasien.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Gallery 1 -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-brand-accent card-hover">
+        <div class="grid grid-cols-2">
+          <div class="aspect-square bg-brand-accent/50 flex items-center justify-center relative">
+            <span class="absolute top-2 left-2 bg-white/90 text-brand-text text-xs font-medium px-2 py-0.5 rounded-full">Before</span>
+            <svg class="w-12 h-12 text-brand-primary opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+          </div>
+          <div class="aspect-square bg-brand-primary/10 flex items-center justify-center relative">
+            <span class="absolute top-2 right-2 bg-brand-primary text-white text-xs font-medium px-2 py-0.5 rounded-full">After</span>
+            <svg class="w-12 h-12 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+        </div>
+        <div class="p-4">
+          <p class="font-semibold text-brand-text text-sm">Scaling & Polishing</p>
+          <p class="text-brand-muted text-xs">Pasien: Ibu Rina · 1 sesi</p>
+        </div>
+      </div>
+
+      <!-- Gallery 2 -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-brand-accent card-hover">
+        <div class="grid grid-cols-2">
+          <div class="aspect-square bg-brand-accent/50 flex items-center justify-center relative">
+            <span class="absolute top-2 left-2 bg-white/90 text-brand-text text-xs font-medium px-2 py-0.5 rounded-full">Before</span>
+            <svg class="w-12 h-12 text-brand-primary opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+          </div>
+          <div class="aspect-square bg-brand-primary/10 flex items-center justify-center relative">
+            <span class="absolute top-2 right-2 bg-brand-primary text-white text-xs font-medium px-2 py-0.5 rounded-full">After</span>
+            <svg class="w-12 h-12 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+        </div>
+        <div class="p-4">
+          <p class="font-semibold text-brand-text text-sm">Tambal Gigi Estetik</p>
+          <p class="text-brand-muted text-xs">Pasien: Bapak Aditya · 2 sesi</p>
+        </div>
+      </div>
+
+      <!-- Gallery 3 -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-brand-accent card-hover">
+        <div class="grid grid-cols-2">
+          <div class="aspect-square bg-brand-accent/50 flex items-center justify-center relative">
+            <span class="absolute top-2 left-2 bg-white/90 text-brand-text text-xs font-medium px-2 py-0.5 rounded-full">Before</span>
+            <svg class="w-12 h-12 text-brand-primary opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+          </div>
+          <div class="aspect-square bg-brand-primary/10 flex items-center justify-center relative">
+            <span class="absolute top-2 right-2 bg-brand-primary text-white text-xs font-medium px-2 py-0.5 rounded-full">After</span>
+            <svg class="w-12 h-12 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+        </div>
+        <div class="p-4">
+          <p class="font-semibold text-brand-text text-sm">Kawat Gigi (Ortodonti)</p>
+          <p class="text-brand-muted text-xs">Pasien: Ibu Sari · 12 bulan</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PROSES PERAWATAN (BARU) ============ -->
+  <section id="proses" class="bg-white border-y border-brand-accent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">Cara Kerja</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-3">Proses Perawatan Anda</h2>
+        <p class="text-brand-muted text-sm sm:text-base">Simpel, cuma 4 langkah. Nggak perlu bingung.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6 relative">
+        <!-- Garis penghubung -->
+        <div class="hidden md:block absolute top-8 left-[12%] right-[12%] h-0.5 bg-brand-accent -z-0"></div>
+
+        <div class="relative text-center">
+          <div class="w-16 h-16 bg-brand-primary text-white font-heading font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg">1</div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Konsultasi Gratis</h3>
+          <p class="text-brand-muted text-sm">Chat atau telepon kami. Ceritakan keluhan gigi Anda.</p>
+        </div>
+
+        <div class="relative text-center">
+          <div class="w-16 h-16 bg-brand-primary text-white font-heading font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg">2</div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Pemeriksaan</h3>
+          <p class="text-brand-muted text-sm">Dokter periksa kondisi gigi. Dapatkan diagnosis & rencana perawatan.</p>
+        </div>
+
+        <div class="relative text-center">
+          <div class="w-16 h-16 bg-brand-primary text-white font-heading font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg">3</div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Perawatan</h3>
+          <p class="text-brand-muted text-sm">Lakukan perawatan sesuai jadwal. Semua nyaman & steril.</p>
+        </div>
+
+        <div class="relative text-center">
+          <div class="w-16 h-16 bg-brand-primary text-white font-heading font-extrabold text-xl rounded-full flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg">4</div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Kontrol Rutin</h3>
+          <p class="text-brand-muted text-sm">Kami ingatkan jadwal kontrol. Gigi tetap sehat & rapi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============ LAYANAN ============ -->
+  <section id="layanan" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+      <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">Layanan</span>
+      <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-3">Perawatan yang kami sediakan</h2>
+      <p class="text-brand-muted text-sm sm:text-base">Semua perawatan ditangani dokter gigi berpengalaman dengan alat steril.</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="bg-white rounded-2xl p-6 border border-brand-accent card-hover">
+        <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Scaling Rutin</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Bersihkan karang gigi & plak, cegah gigi berlubang.</p>
+        <p class="font-heading font-extrabold text-brand-primary">Mulai Rp 250rb</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-brand-accent card-hover">
+        <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Tambal Gigi</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Tambal gigi berlubang dengan bahan berkualitas & tahan lama.</p>
+        <p class="font-heading font-extrabold text-brand-primary">Mulai Rp 200rb</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-brand-accent card-hover">
+        <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Whitening</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Pemutihan gigi aman & hasil terlihat dalam sekali sesi.</p>
+        <p class="font-heading font-extrabold text-brand-primary">Mulai Rp 1,5jt</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 border border-brand-accent card-hover">
+        <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        </div>
+        <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Ortodonti</h3>
+        <p class="text-brand-muted text-sm leading-relaxed mb-4">Pasang kawat gigi untuk senyum lebih rapi & percaya diri.</p>
+        <p class="font-heading font-extrabold text-brand-primary">Mulai Rp 6jt</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONI (DIPERBARUI) ============ -->
+  <section id="testimoni" class="bg-white border-y border-brand-accent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">Testimoni</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-3">Kata pasien kami</h2>
+        <p class="text-brand-muted text-sm sm:text-base">Rating 4.9 dari 120+ ulasan Google</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center text-white font-bold">R</div>
+            <div>
+              <p class="font-semibold text-brand-text text-sm">Ibu Rina</p>
+              <div class="flex gap-0.5 text-brand-secondary">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-brand-muted text-sm leading-relaxed">"Anak saya dulu takut ke dokter gigi. Di sini sabar banget, jadi sekarang malah mau datang sendiri."</p>
+          <p class="text-xs text-brand-muted/60 mt-3">3 hari lalu · Google Review</p>
+        </div>
+
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-brand-secondary rounded-full flex items-center justify-center text-white font-bold">A</div>
+            <div>
+              <p class="font-semibold text-brand-text text-sm">Bapak Aditya</p>
+              <div class="flex gap-0.5 text-brand-secondary">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-brand-muted text-sm leading-relaxed">"Scaling pertama saya, prosesnya cepat dan nggak sakit. Harganya juga masuk akal."</p>
+          <p class="text-xs text-brand-muted/60 mt-3">1 minggu lalu · Google Review</p>
+        </div>
+
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center text-brand-primary font-bold">S</div>
+            <div>
+              <p class="font-semibold text-brand-text text-sm">Ibu Sari</p>
+              <div class="flex gap-0.5 text-brand-secondary">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+            </div>
+          </div>
+          <p class="text-brand-muted text-sm leading-relaxed">"Kliniknya bersih dan wangi. Booking via WA dibalas cepat, nggak perlu antre lama."</p>
+          <p class="text-xs text-brand-muted/60 mt-3">2 minggu lalu · Google Review</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ (BARU) ============ -->
+  <section id="faq" class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="text-center mb-10 max-w-2xl mx-auto">
+      <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">FAQ</span>
+      <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-3">Yang sering ditanya</h2>
+    </div>
+
+    <div class="space-y-3">
+      <div class="faq-item bg-white rounded-2xl border border-brand-accent">
+        <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-brand-text">
+          <span>Apakah perawatan gigi sakit?</span>
+          <span class="faq-icon text-brand-primary text-xl transition-transform flex-shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-brand-muted text-sm leading-relaxed">
+          Kami menggunakan anestesi lokal untuk perawatan yang memerlukan. Sebagian besar pasien merasa nyaman dan tidak merasakan sakit berarti. Dokter kami juga terlatih untuk menangani pasien yang cemas.
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-brand-accent">
+        <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-brand-text">
+          <span>Apakah menerima BPJS atau asuransi?</span>
+          <span class="faq-icon text-brand-primary text-xl transition-transform flex-shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-brand-muted text-sm leading-relaxed">
+          Ya, kami menerima BPJS untuk beberapa layanan dasar dan bekerja sama dengan 6 penyedia asuransi kesehatan swasta. Silakan hubungi kami untuk verifikasi jenis asuransi Anda.
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-brand-accent">
+        <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-brand-text">
+          <span>Berapa lama waktu perawatan?</span>
+          <span class="faq-icon text-brand-primary text-xl transition-transform flex-shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-brand-muted text-sm leading-relaxed">
+          Tergantung jenis perawatan. Scaling rutin sekitar 30-45 menit. Tambal gigi 20-30 menit. Untuk kawat gigi, konsultasi awal 45 menit dan kontrol rutin setiap bulan.
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-brand-accent">
+        <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-brand-text">
+          <span>Bisa cicil pembayaran?</span>
+          <span class="faq-icon text-brand-primary text-xl transition-transform flex-shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-brand-muted text-sm leading-relaxed">
+          Untuk perawatan di atas Rp 2 juta, kami menyediakan opsi cicilan 0% hingga 6 bulan dengan kartu kredit tertentu. Silakan tanyakan detailnya saat booking.
+        </div>
+      </div>
+
+      <div class="faq-item bg-white rounded-2xl border border-brand-accent">
+        <button class="faq-question w-full text-left px-5 py-4 flex justify-between items-center gap-4 font-semibold text-brand-text">
+          <span>Anak saya takut ke dokter gigi, bisa dibantu?</span>
+          <span class="faq-icon text-brand-primary text-xl transition-transform flex-shrink-0">+</span>
+        </button>
+        <div class="faq-answer hidden px-5 pb-4 text-brand-muted text-sm leading-relaxed">
+          Tentu! Kami memiliki dokter spesialis anak yang berpengalaman menangani pasien kecil. Pendekatan kami ramah dan bertahap agar anak merasa aman.
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============ UNTUK PASIEN BARU (BARU) ============ -->
+  <section class="bg-white border-y border-brand-accent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">Pasien Baru</span>
+        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-3">Kunjungan pertama? Ini yang perlu Anda tahu</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Yang Perlu Dibawa</h3>
+          <ul class="text-brand-muted text-sm space-y-1.5">
+            <li>• Kartu identitas (KTP/SIM)</li>
+            <li>• Kartu BPJS/asuransi (jika ada)</li>
+            <li>• Riwayat medis gigi sebelumnya</li>
+          </ul>
+        </div>
+
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Durasi Kunjungan</h3>
+          <p class="text-brand-muted text-sm leading-relaxed">Kunjungan pertama sekitar 45-60 menit, termasuk pemeriksaan lengkap dan konsultasi rencana perawatan.</p>
+        </div>
+
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <div class="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <h3 class="font-heading font-bold text-lg text-brand-text mb-2">Apa yang Akan Terjadi</h3>
+          <ul class="text-brand-muted text-sm space-y-1.5">
+            <li>1. Pendaftaran & wawancara singkat</li>
+            <li>2. Pemeriksaan gigi menyeluruh</li>
+            <li>3. Rontgen (jika diperlukan)</li>
+            <li>4. Konsultasi rencana perawatan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOKASI & JAM ============ -->
+  <section id="lokasi" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-2 gap-10 items-start">
+    <div>
+      <span class="inline-block bg-brand-accent text-brand-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">Lokasi</span>
+      <h2 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-4xl text-brand-text mb-5">Mudah dijangkau</h2>
+
+      <div class="space-y-4 mb-7">
+        <div class="flex gap-3">
+          <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-text text-sm">Alamat</p>
+            <p class="text-brand-muted text-sm">Jl. Merdeka No. 45, Bandung, Jawa Barat</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-text text-sm">Jam Buka</p>
+            <p class="text-brand-muted text-sm">Senin–Sabtu: 09.00–20.00 · Minggu: 10.00–15.00</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-text text-sm">Telepon / WhatsApp</p>
+            <a href="tel:+62811142" class="text-brand-primary font-semibold text-sm hover:underline">0811-142-xxxx</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="tel:+62811142" class="inline-flex items-center justify-center gap-2 bg-white border border-brand-accent hover:border-brand-primary text-brand-primary font-semibold px-6 py-3 rounded-full transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Telepon
+        </a>
+        <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20tanya%20jadwal%20klinik" class="inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-secondary text-white font-semibold px-6 py-3 rounded-full transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Placeholder peta -->
+    <div class="bg-brand-accent rounded-2xl aspect-square md:aspect-video flex items-center justify-center border border-brand-accent">
+      <div class="text-center">
+        <svg class="w-16 h-16 text-brand-primary mx-auto mb-3 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        <p class="text-brand-primary font-semibold">Peta lokasi</p>
+        <p class="text-brand-muted text-sm">(contoh demo)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA AKHIR ============ -->
+  <section class="bg-brand-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+      <h2 class="font-heading font-extrabold text-3xl md:text-4xl mb-4">Siap rawat gigi Anda?</h2>
+      <p class="text-white/85 max-w-lg mx-auto mb-8 text-sm sm:text-base">Konsultasi gratis via WhatsApp atau telepon. Kami bantu carikan jadwal yang paling pas untuk Anda.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="tel:+62811142" class="inline-flex items-center justify-center gap-2 bg-white text-brand-primary hover:bg-brand-accent font-bold px-7 py-4 rounded-full transition shadow-lg text-base sm:text-lg">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          Telepon Sekarang
+        </a>
+        <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20konsultasi%20gratis" class="inline-flex items-center justify-center gap-2 bg-brand-secondary hover:bg-white hover:text-brand-primary text-white font-bold px-7 py-4 rounded-full transition shadow-lg text-base sm:text-lg">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-brand-text text-white/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          </div>
+          <p class="font-heading font-extrabold text-white">Senyum<span class="text-brand-accent">Sehat</span></p>
+        </div>
+        <p class="text-sm leading-relaxed max-w-xs">Klinik gigi keluarga di Bandung. Ramah, nyaman, dan terjangkau.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-3 text-sm">Navigasi</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#layanan" class="hover:text-white">Layanan</a></li>
+          <li><a href="#hasil" class="hover:text-white">Hasil</a></li>
+          <li><a href="#dokter" class="hover:text-white">Dokter</a></li>
+          <li><a href="#proses" class="hover:text-white">Proses</a></li>
+          <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+          <li><a href="#lokasi" class="hover:text-white">Lokasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-3 text-sm">Kontak</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="tel:+62811142" class="hover:text-white">0811-142-xxxx</a></li>
+          <li>halo@senyumsehat.id</li>
+          <li>Jl. Merdeka No. 45, Bandung</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-center text-xs text-white/50 px-4">
+      © 2026 Klinik Senyum Sehat (Demo Masyubi) · Konsep fiktif untuk keperluan portofolio
+    </div>
+  </footer>
+
+  <!-- ============ FLOATING BUTTONS ============ -->
+  <div class="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
+    <a href="tel:+62811142"
+       aria-label="Telepon"
+       class="bg-brand-primary hover:bg-brand-secondary text-white rounded-full p-3.5 shadow-lg transition">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    </a>
+    <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20booking"
+       aria-label="Booking via WhatsApp"
+       class="bg-[#25D366] hover:brightness-95 text-white rounded-full p-3.5 shadow-lg transition">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+
+  <!-- ============ SCRIPT ============ -->
+  <script>
+    // Mobile menu
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = !answer.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.querySelector('.faq-answer').classList.add('hidden');
+          i.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+        });
+
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          item.querySelector('.faq-icon').style.transform = 'rotate(45deg)';
+        }
+      });
+    });
+  </script>
+
+  <!-- Color Tester Widget -->
+  <script src="../../assets/js/color-tester.js" defer></script>
+</body>
+</html>
