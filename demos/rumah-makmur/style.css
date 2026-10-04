@@ -1,0 +1,146 @@
+/* ============================================================
+   Demo: Rumah Makmur — Agen Properti Hunian
+   Design system: Quiet Luxury Editorial
+   ============================================================ */
+
+:root {
+  --brand-primary:   #1E293B;   /* deep slate navy */
+  --brand-secondary: #B45309;   /* warm bronze */
+  --brand-accent:    #F5F3EF;   /* soft stone */
+  --brand-bg:        #FAF8F5;   /* warm ivory */
+  --brand-text:      #1F2937;   /* charcoal */
+}
+
+.bg-brand-primary    { background-color: var(--brand-primary); }
+.bg-brand-secondary  { background-color: var(--brand-secondary); }
+.bg-brand-accent     { background-color: var(--brand-accent); }
+.bg-brand-bg         { background-color: var(--brand-bg); }
+.bg-brand-text       { background-color: var(--brand-text); }
+
+.text-brand-primary   { color: var(--brand-primary); }
+.text-brand-secondary { color: var(--brand-secondary); }
+.text-brand-accent    { color: var(--brand-accent); }
+.text-brand-text      { color: var(--brand-text); }
+.text-brand-muted     { color: color-mix(in srgb, var(--brand-text) 60%, white); }
+
+.border-brand-primary   { border-color: var(--brand-primary); }
+.border-brand-secondary { border-color: var(--brand-secondary); }
+.border-brand-accent    { border-color: var(--brand-accent); }
+
+.hover\:bg-brand-primary:hover     { background-color: var(--brand-primary); }
+.hover\:bg-brand-secondary:hover   { background-color: var(--brand-secondary); }
+.hover\:bg-brand-accent:hover      { background-color: var(--brand-accent); }
+.hover\:text-brand-primary:hover   { color: var(--brand-primary); }
+.hover\:border-brand-primary:hover { border-color: var(--brand-primary); }
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* ============ Hero dengan Pencarian ============ */
+.hero-property {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--brand-accent) 0%, var(--brand-bg) 100%);
+}
+.hero-property::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: var(--brand-primary);
+  opacity: 0.04;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 0;
+}
+
+/* ============ Kartu Properti ============ */
+.property-card {
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.property-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(30, 41, 59, .12);
+}
+.property-card .property-img {
+  transition: transform .5s ease;
+  overflow: hidden;
+}
+.property-card:hover .property-img svg {
+  transform: scale(1.05);
+}
+
+/* ============ Listing Asimetris ============ */
+.property-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.25rem;
+}
+.property-grid .prop-1 { grid-column: span 5; }
+.property-grid .prop-2 { grid-column: span 7; margin-top: 2.5rem; }
+.property-grid .prop-3 { grid-column: span 7; }
+@media (max-width: 768px) {
+  .property-grid .prop-1,
+  .property-grid .prop-2,
+  .property-grid .prop-3 {
+    grid-column: span 12;
+    margin-top: 0;
+  }
+}
+
+/* ============ Diagonal Ribbon ============ */
+.diag-ribbon {
+  position: relative;
+  overflow: hidden;
+}
+.diag-ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 5px;
+  background: var(--brand-secondary);
+  transform: rotate(-1.2deg);
+  transform-origin: left center;
+}
+
+/* ============ Search Box ============ */
+.search-box {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(30, 41, 59, .08);
+  border: 1px solid var(--brand-accent);
+}
+
+/* ============ Video Placeholder ============ */
+.video-tour {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, black) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.video-tour::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(180, 83, 9, .2) 0%, transparent 60%);
+}
+
+/* Badge miring */
+.badge-rotate { transform: rotate(-2deg); }
+
+/* FAQ */
+.faq-icon { transform: rotate(0deg); transition: transform .25s ease; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 80px; }

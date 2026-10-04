@@ -1,0 +1,131 @@
+/* ============================================================
+   Demo: Coach Andi — Career & Leadership Coach
+   Design system: Professional Dynamic
+   ============================================================ */
+
+:root {
+  --brand-primary:   #1A2B3C;   /* charcoal navy */
+  --brand-secondary: #D97706;   /* warm amber */
+  --brand-accent:    #F5F2EC;   /* soft cream */
+  --brand-bg:        #FAF8F5;   /* light warm */
+  --brand-text:      #1F2937;   /* dark slate */
+}
+
+.bg-brand-primary    { background-color: var(--brand-primary); }
+.bg-brand-secondary  { background-color: var(--brand-secondary); }
+.bg-brand-accent     { background-color: var(--brand-accent); }
+.bg-brand-bg         { background-color: var(--brand-bg); }
+.bg-brand-text       { background-color: var(--brand-text); }
+
+.text-brand-primary   { color: var(--brand-primary); }
+.text-brand-secondary { color: var(--brand-secondary); }
+.text-brand-accent    { color: var(--brand-accent); }
+.text-brand-text      { color: var(--brand-text); }
+.text-brand-muted     { color: color-mix(in srgb, var(--brand-text) 60%, white); }
+
+.border-brand-primary   { border-color: var(--brand-primary); }
+.border-brand-secondary { border-color: var(--brand-secondary); }
+.border-brand-accent    { border-color: var(--brand-accent); }
+
+.hover\:bg-brand-primary:hover     { background-color: var(--brand-primary); }
+.hover\:bg-brand-secondary:hover   { background-color: var(--brand-secondary); }
+.hover\:bg-brand-accent:hover      { background-color: var(--brand-accent); }
+.hover\:text-brand-primary:hover   { color: var(--brand-primary); }
+.hover\:border-brand-primary:hover { border-color: var(--brand-primary); }
+
+body {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* ============ Hero Asimetris ============ */
+.hero-asym {
+  position: relative;
+  overflow: hidden;
+}
+.hero-asym::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  background: var(--brand-accent);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .hero-asym::before {
+    width: 100%;
+    clip-path: polygon(0 55%, 100% 25%, 100% 100%, 0 100%);
+  }
+}
+
+/* ============ Framework Berjenjang ============ */
+.framework-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .framework-stack {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+  .framework-stack > *:nth-child(1) { margin-top: 0; }
+  .framework-stack > *:nth-child(2) { margin-top: 2.5rem; }
+  .framework-stack > *:nth-child(3) { margin-top: 5rem; }
+}
+
+/* ============ Diagonal Ribbon ============ */
+.diag-ribbon {
+  position: relative;
+  overflow: hidden;
+}
+.diag-ribbon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 6px;
+  background: var(--brand-secondary);
+  transform: rotate(-1.5deg);
+  transform-origin: left center;
+}
+
+/* ============ Card Hover ============ */
+.card-hover { transition: transform .35s ease, box-shadow .35s ease; }
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(26, 43, 60, .12);
+}
+
+/* Badge miring */
+.badge-rotate { transform: rotate(-2deg); }
+
+/* Video placeholder */
+.video-placeholder {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, color-mix(in srgb, var(--brand-primary) 70%, black) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.video-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(217, 119, 6, .25) 0%, transparent 60%);
+}
+
+/* FAQ */
+.faq-icon { transform: rotate(0deg); transition: transform .25s ease; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 80px; }
