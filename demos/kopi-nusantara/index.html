@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Nusantara — Single Origin dari Tanah Indonesia</title>
+  <meta name="description" content="Kopi Nusantara menyajikan single origin pilihan dari Aceh, Sumatera, Jawa, dan Sulawesi. Dibuat dengan cerita, diseduh dengan hormat.">
+
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../assets/css/tailwind.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../assets/css/color-tester.css">
+</head>
+<body class="font-body antialiased text-brand-text">
+
+  <!-- Demo badge -->
+  <div class="bg-brand-primary text-white text-center text-xs py-1.5 font-medium tracking-wide">
+    Demo Portofolio Masyubi · Konsep fiktif untuk ilustrasi
+  </div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-accent">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
+          <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3 0-6 2-6 6s3 6 6 6 6-2 6-6-3-6-6-6z"/>
+          </svg>
+        </div>
+        <span class="font-editorial text-brand-primary text-lg">Kopi Nusantara</span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-7 text-sm font-medium text-brand-muted">
+        <li><a href="#cerita" class="hover:text-brand-primary transition">Cerita</a></li>
+        <li><a href="#kopi" class="hover:text-brand-primary transition">Kopi</a></li>
+        <li><a href="#seduh" class="hover:text-brand-primary transition">Cara Seduh</a></li>
+        <li><a href="#ruang" class="hover:text-brand-primary transition">Ruang</a></li>
+        <li><a href="#lokasi" class="hover:text-brand-primary transition">Lokasi</a></li>
+      </ul>
+
+      <a href="https://wa.me/62811142?text=Halo%20Kopi%20Nusantara%2C%20saya%20mau%20pesan"
+         class="hidden md:inline-flex items-center gap-2 bg-brand-secondary hover:bg-brand-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
+        Pesan Sekarang
+      </a>
+
+      <button id="menuBtn" class="md:hidden text-brand-text p-2 -mr-2" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-5 space-y-1 text-sm border-t border-brand-accent pt-3">
+      <a href="#cerita" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Cerita</a>
+      <a href="#kopi" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Kopi</a>
+      <a href="#seduh" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Cara Seduh</a>
+      <a href="#ruang" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Ruang</a>
+      <a href="#lokasi" class="block py-2.5 px-3 rounded-xl hover:bg-brand-accent">Lokasi</a>
+      <a href="https://wa.me/62811142" class="block text-center bg-brand-secondary text-white py-3 rounded-full font-semibold mt-3">Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero-gradient hero-texture">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-brand-secondary text-sm font-semibold tracking-widest uppercase mb-4">Single Origin Indonesia</p>
+
+        <h1 class="font-editorial text-3xl sm:text-4xl md:text-5xl leading-tight text-brand-primary mb-6">
+          Setiap biji punya <span class="text-brand-secondary">cerita</span>.
+        </h1>
+
+        <p class="text-brand-muted text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
+          Dari tanah vulkanik Aceh hingga pegunungan Toraja. Kami memilih biji terbaik, memanggang dengan sabar, dan menyeduhnya dengan hormat.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#kopi"
+             class="inline-flex items-center justify-center gap-2 bg-brand-secondary hover:bg-brand-primary text-white font-semibold px-7 py-3.5 rounded-full transition w-full sm:w-auto">
+            Jelajahi Kopi Kami
+          </a>
+          <a href="#cerita"
+             class="inline-flex items-center justify-center gap-2 bg-white border border-brand-accent hover:border-brand-primary text-brand-primary font-semibold px-7 py-3.5 rounded-full transition w-full sm:w-auto">
+            Baca Cerita
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-5 mt-8 text-sm text-brand-muted">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-brand-secondary rounded-full"></span>
+            Dipanggang setiap minggu
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-brand-secondary rounded-full"></span>
+            Biji utuh & bubuk
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual: editorial image placeholder -->
+      <div class="relative">
+        <div class="bg-brand-accent rounded-3xl aspect-[4/5] max-w-sm mx-auto flex items-center justify-center border border-brand-accent hero-texture">
+          <div class="text-center px-6">
+            <div class="w-20 h-20 mx-auto mb-5 bg-brand-primary/10 rounded-full flex items-center justify-center">
+              <svg class="w-10 h-10 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3 0-6 2-6 6s3 6 6 6 6-2 6-6-3-6-6-6z"/>
+              </svg>
+            </div>
+            <p class="font-editorial text-brand-primary text-xl">Foto Produk</p>
+            <p class="text-brand-muted text-sm mt-1">Placeholder editorial</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERITA ============ -->
+  <section id="cerita" class="bg-white border-y border-brand-accent">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+      <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-4">Cerita Kami</p>
+      <h2 class="font-editorial text-2xl sm:text-3xl md:text-4xl text-brand-primary mb-6">
+        Kopi bukan sekadar minuman.
+      </h2>
+      <p class="text-brand-muted leading-relaxed max-w-2xl mx-auto mb-4 text-sm sm:text-base">
+        Kopi Nusantara lahir dari perjalanan ke dataran tinggi Gayo, Aceh. Di sana kami bertemu Pak Yusuf, petani kopi yang sudah tiga puluh tahun menanam arabika. Ia bercerita tentang tanah, hujan, dan bagaimana setiap panen adalah doa.
+      </p>
+      <p class="text-brand-muted leading-relaxed max-w-2xl mx-auto text-sm sm:text-base">
+        Sejak itu, kami memutuskan untuk tidak sekadar menjual kopi. Kami membawa cerita. Setiap kemasan Kopi Nusantara mencantumkan nama petani, lokasi kebun, dan proses pascapanen. Supaya Anda tahu persis dari mana asal rasa di cangkir Anda.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ KOPI ============ -->
+  <section id="kopi" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+      <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-4">Pilihan Kopi</p>
+      <h2 class="font-editorial text-2xl sm:text-3xl md:text-4xl text-brand-primary mb-4">Tiga single origin. Tiga cerita.</h2>
+      <p class="text-brand-muted text-sm sm:text-base">Dipanggang setiap minggu di dapur kami di Bandung.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Kopi 1 -->
+      <article class="bg-white rounded-2xl border border-brand-accent card-hover overflow-hidden">
+        <div class="aspect-[4/3] bg-brand-accent flex items-center justify-center">
+          <svg class="w-16 h-16 text-brand-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3 0-6 2-6 6s3 6 6 6 6-2 6-6-3-6-6-6z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-2">Aceh · Gayo</p>
+          <h3 class="font-editorial text-xl text-brand-primary mb-3">Gayo Wine Natural</h3>
+          <p class="text-brand-muted text-sm leading-relaxed mb-5">
+            Diproses secara natural, dikeringkan di atas alas bambu selama tiga minggu. Rasa: anggur merah, cokelat hitam, dan sedikit rempah.
+          </p>
+          <p class="font-editorial text-brand-primary text-lg">Rp 120.000 <span class="text-sm font-body text-brand-muted">/ 250g</span></p>
+        </div>
+      </article>
+
+      <!-- Kopi 2 -->
+      <article class="bg-white rounded-2xl border border-brand-accent card-hover overflow-hidden">
+        <div class="aspect-[4/3] bg-brand-accent flex items-center justify-center">
+          <svg class="w-16 h-16 text-brand-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3 0-6 2-6 6s3 6 6 6 6-2 6-6-3-6-6-6z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-2">Sumatera · Mandailing</p>
+          <h3 class="font-editorial text-xl text-brand-primary mb-3">Mandailing Wet Hulled</h3>
+          <p class="text-brand-muted text-sm leading-relaxed mb-5">
+            Diolah dengan metode giling basah khas Sumatera. Rasa: herbal, tembakau manis, dan tubuh yang tebal.
+          </p>
+          <p class="font-editorial text-brand-primary text-lg">Rp 100.000 <span class="text-sm font-body text-brand-muted">/ 250g</span></p>
+        </div>
+      </article>
+
+      <!-- Kopi 3 -->
+      <article class="bg-white rounded-2xl border border-brand-accent card-hover overflow-hidden">
+        <div class="aspect-[4/3] bg-brand-accent flex items-center justify-center">
+          <svg class="w-16 h-16 text-brand-primary/30" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m0-18c-3 0-6 2-6 6s3 6 6 6 6-2 6-6-3-6-6-6z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-2">Sulawesi · Toraja</p>
+          <h3 class="font-editorial text-xl text-brand-primary mb-3">Toraja Sapan</h3>
+          <p class="text-brand-muted text-sm leading-relaxed mb-5">
+            Ditanam di ketinggian 1.600 mdpl. Rasa: jeruk manis, karamel, dan keasaman yang cerah.
+          </p>
+          <p class="font-editorial text-brand-primary text-lg">Rp 110.000 <span class="text-sm font-body text-brand-muted">/ 250g</span></p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center mt-10">
+      <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20pesan%20kopi"
+         class="inline-flex items-center gap-2 bg-brand-secondary hover:bg-brand-primary text-white font-semibold px-7 py-3.5 rounded-full transition">
+        Pesan via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ CARA SEDUH ============ -->
+  <section id="seduh" class="bg-white border-y border-brand-accent">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-4">Panduan</p>
+        <h2 class="font-editorial text-2xl sm:text-3xl md:text-4xl text-brand-primary mb-4">Cara menyeduh di rumah</h2>
+        <p class="text-brand-muted text-sm sm:text-base">Tidak perlu alat mahal. Cukup V60 dan air panas.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-editorial text-brand-primary text-lg">1</span>
+          </div>
+          <h3 class="font-semibold text-brand-primary text-sm mb-2">Timbang 15g</h3>
+          <p class="text-brand-muted text-sm">Giling kasar. Rasio 1:15.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-editorial text-brand-primary text-lg">2</span>
+          </div>
+          <h3 class="font-semibold text-brand-primary text-sm mb-2">Panaskan air</h3>
+          <p class="text-brand-muted text-sm">Suhu 92°C. Basahi filter.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-editorial text-brand-primary text-lg">3</span>
+          </div>
+          <h3 class="font-semibold text-brand-primary text-sm mb-2">Tuang perlahan</h3>
+          <p class="text-brand-muted text-sm">Bloom 30 detik. Tuang melingkar.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-accent rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="font-editorial text-brand-primary text-lg">4</span>
+          </div>
+          <h3 class="font-semibold text-brand-primary text-sm mb-2">Nikmati</h3>
+          <p class="text-brand-muted text-sm">Total waktu 2:30. Selamat menikmati.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RUANG ============ -->
+  <section id="ruang" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="bg-brand-accent rounded-3xl aspect-square flex items-center justify-center hero-texture">
+        <div class="text-center px-6">
+          <div class="w-16 h-16 mx-auto mb-4 bg-brand-primary/10 rounded-full flex items-center justify-center">
+            <svg class="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <p class="font-editorial text-brand-primary text-xl">Foto Ruang</p>
+          <p class="text-brand-muted text-sm mt-1">Placeholder suasana</p>
+        </div>
+      </div>
+
+      <div>
+        <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-4">Ruang Kami</p>
+        <h2 class="font-editorial text-2xl sm:text-3xl md:text-4xl text-brand-primary mb-5">Tempat untuk berhenti sebentar.</h2>
+        <p class="text-brand-muted leading-relaxed mb-5 text-sm sm:text-base">
+          Kopi Nusantara bukan hanya tempat membeli kopi. Ini ruang untuk duduk, membaca, berbicara, atau sekadar diam. Kami menyediakan wifi, colokan, dan kursi yang nyaman.
+        </p>
+        <p class="text-brand-muted leading-relaxed text-sm sm:text-base">
+          Tersedia juga pastry dari toko roti lokal, teh herbal untuk yang tidak minum kopi, dan air mineral gratis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONI ============ -->
+  <section class="bg-white border-y border-brand-accent">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-4">Kata Mereka</p>
+        <h2 class="font-editorial text-2xl sm:text-3xl md:text-4xl text-brand-primary">Yang sudah mencoba</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <p class="text-brand-muted text-sm leading-relaxed mb-4">"Gayo Wine-nya luar biasa. Saya tidak pernah suka kopi tanpa susu, tapi ini beda. Rasanya seperti minum anggur merah."</p>
+          <p class="font-semibold text-brand-primary text-sm">Dita</p>
+          <p class="text-brand-muted text-xs">Penulis</p>
+        </div>
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <p class="text-brand-muted text-sm leading-relaxed mb-4">"Saya datang untuk wifi, tapi pulang membawa tiga kemasan. Tempatnya tenang, kopinya jujur."</p>
+          <p class="font-semibold text-brand-primary text-sm">Raka</p>
+          <p class="text-brand-muted text-xs">Desainer</p>
+        </div>
+        <div class="bg-brand-bg rounded-2xl p-6 border border-brand-accent">
+          <p class="text-brand-muted text-sm leading-relaxed mb-4">"Sebagai orang yang tidak minum kopi, saya tetap suka datang. Ada teh herbal dan pastry yang enak."</p>
+          <p class="font-semibold text-brand-primary text-sm">Maya</p>
+          <p class="text-brand-muted text-xs">Guru</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOKASI ============ -->
+  <section id="lokasi" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid md:grid-cols-2 gap-10 items-start">
+    <div>
+      <p class="text-brand-secondary text-xs font-semibold tracking-widest uppercase mb-4">Lokasi</p>
+      <h2 class="font-editorial text-2xl sm:text-3xl md:text-4xl text-brand-primary mb-6">Mampir, ya.</h2>
+
+      <div class="space-y-4 mb-8">
+        <div class="flex gap-3">
+          <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-primary text-sm">Alamat</p>
+            <p class="text-brand-muted text-sm">Jl. Braga No. 12, Bandung, Jawa Barat</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-primary text-sm">Jam Buka</p>
+            <p class="text-brand-muted text-sm">Setiap hari, 08.00–22.00</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <div class="w-10 h-10 bg-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div>
+            <p class="font-semibold text-brand-primary text-sm">WhatsApp</p>
+            <a href="https://wa.me/62811142" class="text-brand-secondary font-semibold text-sm hover:underline">0811-142-xxxx</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20tanya%20lokasi"
+         class="inline-flex items-center gap-2 bg-brand-secondary hover:bg-brand-primary text-white font-semibold px-7 py-3.5 rounded-full transition">
+        Tanya Lokasi
+      </a>
+    </div>
+
+    <div class="bg-brand-accent rounded-2xl aspect-square md:aspect-video flex items-center justify-center border border-brand-accent">
+      <div class="text-center">
+        <svg class="w-16 h-16 text-brand-primary mx-auto mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+        <p class="text-brand-primary font-semibold">Peta lokasi</p>
+        <p class="text-brand-muted text-sm">(contoh demo)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA AKHIR ============ -->
+  <section class="bg-brand-primary text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
+      <h2 class="font-editorial text-3xl md:text-4xl mb-4">Coba kopi kami.</h2>
+      <p class="text-white/80 max-w-lg mx-auto mb-8 text-sm sm:text-base">Pesan lewat WhatsApp. Kami kirim ke seluruh Indonesia.</p>
+      <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20pesan%20kopi"
+         class="inline-flex items-center gap-2 bg-brand-secondary hover:bg-white hover:text-brand-primary text-white font-bold px-8 py-4 rounded-full transition shadow-lg text-base sm:text-lg">
+        Pesan Sekarang
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-brand-text text-white/70">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div>
+        <p class="font-editorial text-white text-lg mb-3">Kopi Nusantara</p>
+        <p class="text-sm leading-relaxed max-w-xs">Single origin dari tanah Indonesia. Dipanggang setiap minggu di Bandung.</p>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-3 text-sm">Navigasi</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#cerita" class="hover:text-white">Cerita</a></li>
+          <li><a href="#kopi" class="hover:text-white">Kopi</a></li>
+          <li><a href="#seduh" class="hover:text-white">Cara Seduh</a></li>
+          <li><a href="#ruang" class="hover:text-white">Ruang</a></li>
+          <li><a href="#lokasi" class="hover:text-white">Lokasi</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-3 text-sm">Kontak</p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://wa.me/62811142" class="hover:text-white">0811-142-xxxx</a></li>
+          <li>halo@kopinucantara.id</li>
+          <li>Jl. Braga No. 12, Bandung</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 py-4 text-center text-xs text-white/50 px-4">
+      © 2026 Kopi Nusantara (Demo Masyubi) · Konsep fiktif untuk keperluan portofolio
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/62811142?text=Halo%2C%20saya%20mau%20pesan%20kopi"
+     aria-label="Pesan via WhatsApp"
+     class="fixed bottom-4 right-4 z-50 bg-brand-secondary hover:bg-brand-primary text-white rounded-full p-3.5 shadow-lg transition">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+    });
+  </script>
+
+  <script src="../../assets/js/color-tester.js" defer></script>
+</body>
+</html>
