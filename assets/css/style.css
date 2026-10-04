@@ -1,10 +1,29 @@
-/* Font smooth + scroll behavior */
+/* Scroll behavior */
 html { scroll-behavior: smooth; }
-body { font-family: 'Inter', system-ui, sans-serif; }
 
-/* Heading pakai Plus Jakarta Sans */
+/* Font smooth */
+body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* Heading font */
 h1, h2, h3, h4, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
 
-/* FAQ accordion transition */
-.faq-icon { transform: rotate(0deg); }
-.faq-item.open .faq-icon { transform: rotate(45deg); }  
+/* FAQ accordion */
+.faq-icon { transform: rotate(0deg); transition: transform .25s ease; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* Focus visible untuk aksesibilitas */
+a:focus-visible, button:focus-visible, input:focus-visible, 
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid #3368A0;
+  outline-offset: 2px;
+}
+
+/* Animasi blob lembut */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(10px, -10px); }
+}
+.blob-anim { animation: float 6s ease-in-out infinite; }
+
+/* Scroll offset untuk sticky navbar */
+section[id] { scroll-margin-top: 80px; }
