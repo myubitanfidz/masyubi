@@ -1,0 +1,10 @@
+/* Font smooth + scroll behavior */
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; }
+
+/* Heading pakai Plus Jakarta Sans */
+h1, h2, h3, h4, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* FAQ accordion transition */
+.faq-icon { transform: rotate(0deg); }
+.faq-item.open .faq-icon { transform: rotate(45deg); }  
