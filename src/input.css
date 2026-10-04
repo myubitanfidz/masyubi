@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3368A0;
+  --color-primary-dark: #28547F;
+  --color-secondary: #66A3BF;
+  --color-accent: #C8DFDB;
+  --color-cream: #F2EFE7;
+  --color-ink: #1A2B3C;
+  --color-muted: #5A6B7A;
+  --color-wa: #25D366;
+
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 4px 20px rgba(51, 104, 160, .06);
+  --shadow-lift: 0 12px 32px rgba(51, 104, 160, .10);
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); }
+  section[id] { scroll-margin-top: 80px; }
+}
+
+@layer components {
+  .faq-icon { transform: rotate(0deg); transition: transform .25s ease; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+}
+
+@layer utilities {
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
