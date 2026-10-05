@@ -1083,6 +1083,13 @@
   .text-\[28px\] {
     font-size: 28px;
   }
+  .text-\[30px\] {
+    font-size: 30px;
+  }
+  .leading-\[1\.12\] {
+    --tw-leading: 1.12;
+    line-height: 1.12;
+  }
   .leading-\[1\.15\] {
     --tw-leading: 1.15;
     line-height: 1.15;
@@ -1135,6 +1142,12 @@
     color: color-mix(in srgb, #1A2B3C 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-ink) 50%, transparent);
+    }
+  }
+  .text-ink\/55 {
+    color: color-mix(in srgb, #1A2B3C 55%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-ink) 55%, transparent);
     }
   }
   .text-ink\/60 {
@@ -1446,6 +1459,9 @@
     .sm\:gap-10 {
       gap: calc(var(--spacing) * 10);
     }
+    .sm\:gap-14 {
+      gap: calc(var(--spacing) * 14);
+    }
     :where(.sm\:space-y-3 > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
@@ -1555,6 +1571,10 @@
       --tw-leading: 1.1;
       line-height: 1.1;
     }
+    .sm\:leading-\[1\.05\] {
+      --tw-leading: 1.05;
+      line-height: 1.05;
+    }
   }
   @media (width >= 48rem) {
     .md\:col-span-1 {
@@ -1596,6 +1616,9 @@
     }
     .md\:grid-cols-5 {
       grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .md\:gap-10 {
+      gap: calc(var(--spacing) * 10);
     }
     .md\:gap-12 {
       gap: calc(var(--spacing) * 12);
@@ -1644,6 +1667,9 @@
     }
     .lg\:text-\[56px\] {
       font-size: 56px;
+    }
+    .lg\:text-\[58px\] {
+      font-size: 58px;
     }
   }
 }
