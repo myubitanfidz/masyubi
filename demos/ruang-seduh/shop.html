@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jelajahi 12 contoh biji kopi, drip bag, dan alat seduh Ruang Seduh. Pencarian, filter, dan keranjang demo."><meta name="theme-color" content="#F7F4ED">
+  <title>Shop — Ruang Seduh</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/jakarta.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lora.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css"><script src="assets/app.js" defer></script>
+</head>
+<body data-page="shop">
+  <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div class="demo-strip">Konsep toko fiktif <span aria-hidden="true">·</span> Sebuah demo oleh <a href="../../index.html">Masyubi</a></div>
+  <header class="site-header wrap">
+    <a class="wordmark" href="index.html"><img src="assets/mark.svg" width="32" height="36" alt=""><span>ruang seduh<span class="wordmark-note">KOPI & RITUAL SEHARI-HARI</span></span></a>
+    <nav aria-label="Navigasi utama"><a href="index.html">Beranda</a><a href="shop.html" aria-current="page">Shop</a><a href="index.html#tentang">Tentang</a></nav>
+    <button class="cart-trigger" type="button" data-open-cart aria-label="Buka keranjang, 0 barang"><svg width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Zm3 0V5a4 4 0 0 1 8 0v2"/></svg><span class="cart-label">Keranjang</span><span data-cart-count>0</span></button>
+  </header>
+  <main id="main" class="shop-main wrap">
+    <div class="shop-heading"><div><p class="eyebrow">TEMUKAN TEMAN SEDUHMU</p><h1>Untuk setiap jeda.</h1></div><p>Pilih kopinya. Lengkapi ritualnya.<br>Seluruh produk adalah contoh fiktif.</p></div>
+    <form class="shop-controls" role="search" id="catalog-form">
+      <div class="search-field"><label class="sr-only" for="search">Cari nama produk</label><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input type="search" id="search" name="search" placeholder="Cari kopi atau alat seduh…" autocomplete="off" maxlength="100"></div>
+      <div class="sort-field"><label for="sort">Urutkan</label><select id="sort" name="sort"><option value="default">Pilihan Ruang Seduh</option><option value="asc">Harga termurah</option><option value="desc">Harga termahal</option></select></div>
+      <fieldset class="category-filter"><legend class="sr-only">Filter kategori</legend><label><input type="radio" name="category" value="all" checked><span>Semua</span></label><label><input type="radio" name="category" value="biji"><span>Biji Kopi</span></label><label><input type="radio" name="category" value="drip"><span>Drip Bag</span></label><label><input type="radio" name="category" value="alat"><span>Alat Seduh</span></label></fieldset>
+    </form>
+    <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+    <h2 class="sr-only">Katalog produk</h2>
+    <div class="product-grid" id="catalog"></div>
+    <div class="empty-state" id="no-results" hidden><p class="eyebrow">BELUM KETEMU?</p><h2>Tidak ada produk yang cocok.</h2><p>Coba nama lain atau lihat kembali semua produk.</p><button class="button" type="button" id="reset-filters">Lihat semua produk</button></div>
+    <noscript><p>Aktifkan JavaScript untuk pencarian produk, detail, dan keranjang demo.</p></noscript>
+    <p class="shop-footnote">Punya waktu singkat? Pilih drip bag. Ingin mencoba resep sendiri? Mulai dengan biji kopi dan dripper.</p>
+  </main>
+  <footer class="site-footer wrap"><div><a class="footer-brand" href="index.html">ruang seduh</a><p>Kopi untuk jeda sehari-hari.</p></div><nav aria-label="Navigasi footer"><a href="shop.html">Shop</a><a href="index.html#tentang">Tentang</a><a href="../../index.html">Portofolio Masyubi ↗</a></nav><p class="footer-note">Demo toko fiktif. Pesanan tidak dikirim.<br>© 2026 Ruang Seduh — konsep oleh Masyubi.</p></footer>
+  <div id="notifications" class="notification" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
