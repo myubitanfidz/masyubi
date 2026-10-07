@@ -4,7 +4,7 @@ Landing page kamera fiktif untuk portofolio Masyubi. HTML, CSS, JavaScript vanil
 
 ## Preview
 
-Buka `examples/rona/index.html` langsung di browser, atau klik kanan file tersebut di VS Code → **Open with Live Server**. Jika server proyek sudah berjalan, buka `/examples/rona/index.html`. URL folder `/examples/rona` dengan atau tanpa garis miring juga didukung.
+Buka `demos/rona/index.html` langsung di browser, atau klik kanan file tersebut di VS Code → **Open with Live Server**. Jika server proyek sudah berjalan, buka `/demos/rona/index.html`. URL folder `/demos/rona` dengan atau tanpa garis miring juga didukung.
 
 ## File
 
@@ -40,4 +40,4 @@ Lighthouse 13.5.0: HTTP localhost, Chrome 154 headless, mobile 390 × 844, DPR 1
 
 Best Practices dan SEO: 100 pada ketiga audit. Target Accessibility ≥95 dan CLS ≤0,1 tercapai. Performance ≥90 tercapai pada audit kedua, tetapi **belum konsisten** pada host pengujian ini. Tidak diklaim bebas lag atau dijamin mendapat skor tertentu pada perangkat lain. Penyebab variasi antar-audit belum terisolasi. Laporan terakhir: `qa/lighthouse.html` dan `qa/lighthouse-summary.json`.
 
-Opsional: set `LIGHTHOUSE_MODULE` ke modul resmi `lighthouse/core/index.js` lokal untuk menjalankan audit setelah pengujian, dalam browser baru. `node examples/rona/qa/verify.mjs --audit-only` menjalankan audit saja. Alat QA tidak diperlukan untuk preview atau hosting halaman.
+Opsional: set `LIGHTHOUSE_MODULE` ke modul resmi `lighthouse/core/index.js` lokal untuk menjalankan audit setelah pengujian, dalam browser baru. `node demos/rona/qa/verify.mjs --audit-only` menjalankan audit saja. Alat QA tidak diperlukan untuk preview atau hosting halaman.

@@ -26,7 +26,7 @@ page.on('pageerror', error => errors.push(error.message));
 page.on('console', message => { if (message.type()==='error') errors.push({message:message.text(),location:message.location()}); });
 page.on('response', response => { if (response.status()>=400) console.log('HTTP ERROR',response.status(),response.url()); });
 const check = (name, condition) => { assert.ok(condition, name); checks.push(name); };
-const base = 'http://127.0.0.1:4176/examples/rona';
+const base = 'http://127.0.0.1:4176/demos/rona';
 const load = async (url=base+'/index.html') => { await page.goto(url,{waitUntil:'networkidle0'}); await page.evaluate(()=>document.fonts.ready); };
 const sweep = async () => {
   for(let y=0;y<await page.evaluate(()=>document.documentElement.scrollHeight);y+=650) { await page.evaluate(y=>scrollTo(0,y),y); await page.waitForNetworkIdle({idleTime:100}); }
@@ -47,7 +47,7 @@ try {
   for (const route of [base,base+'/',pathToFileURL(path.join(root,'index.html')).href]) {
     await load(route);
     check(`CSS and JS load: ${route}`,await page.evaluate(()=>getComputedStyle(document.body).backgroundColor==='rgb(243, 240, 232)'&&!document.querySelector('.variant-controls').hidden));
-    check(`Correct asset base: ${route}`,await page.evaluate(()=>new URL('assets/images/camera-paper.svg',document.baseURI).pathname.endsWith('/examples/rona/assets/images/camera-paper.svg')));
+    check(`Correct asset base: ${route}`,await page.evaluate(()=>new URL('assets/images/camera-paper.svg',document.baseURI).pathname.endsWith('/demos/rona/assets/images/camera-paper.svg')));
   }
   await page.setViewport({width:390,height:844,deviceScaleFactor:1}); await load();
   await page.click('.menu-toggle');
