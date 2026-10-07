@@ -37,7 +37,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/tailwind.css">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -109,16 +109,26 @@
   </script>
 
   <style>
+    /* Typography: clear main text, serif details, handwritten annotations. */
+    body.font-body,
+    .font-body,
+    .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+    }
+    button, input, select, textarea { font-family: inherit; }
+    em { font-style: normal; }
+
     /* ============================================
        ANTI-AI-SLOP UPGRADES
        ============================================ */
 
     .font-display {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 500;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
       letter-spacing: -0.02em;
     }
-    .font-display em { font-style: italic; font-weight: 400; }
+    .font-display em { font-style: normal; font-weight: inherit; }
 
     .hand {
       font-family: 'Caveat', cursive;
@@ -153,16 +163,16 @@
       background: currentColor;
     }
     .sec-head h2 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: clamp(28px, 3.6vw, 42px);
-      font-weight: 500;
-      line-height: 1.1;
+      font-weight: 700;
+      line-height: 1.2;
       letter-spacing: -0.025em;
       color: #1A1F1A;
     }
     .sec-head h2 em {
-      font-style: italic;
-      font-weight: 400;
+      font-style: normal;
+      font-weight: inherit;
       color: #1B4A38;
     }
     .sec-head .lead {
@@ -193,7 +203,7 @@
       gap: 10px;
     }
     .trust-strip .item strong {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-weight: 500;
       color: #1B4A38;
       font-size: 16px;
@@ -244,8 +254,8 @@
       transform: translateY(-2px);
     }
     .svc-num {
-      font-family: 'Fraunces', Georgia, serif;
-      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+      font-style: normal;
       font-weight: 500;
       font-size: 13px;
       color: #1B4A38;
@@ -253,7 +263,7 @@
       margin-bottom: 22px;
     }
     .svc-card h3 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 22px;
       font-weight: 500;
       letter-spacing: -0.02em;
@@ -338,11 +348,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 38px;
       font-weight: 500;
       letter-spacing: -0.03em;
-      font-style: italic;
+      font-style: normal;
     }
     .case-thumb .demo-tag {
       position: absolute;
@@ -383,7 +393,7 @@
       background: currentColor;
     }
     .case-card h3 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 22px;
       font-weight: 500;
       letter-spacing: -0.02em;
@@ -436,8 +446,8 @@
       flex-direction: column;
     }
     .proc-num {
-      font-family: 'Fraunces', Georgia, serif;
-      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+      font-style: normal;
       font-weight: 500;
       font-size: 52px;
       line-height: 0.9;
@@ -447,7 +457,7 @@
       letter-spacing: -0.03em;
     }
     .proc-item h3 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 19px;
       font-weight: 500;
       letter-spacing: -0.015em;
@@ -500,14 +510,14 @@
       background: #FBF8F0;
     }
     .price-num {
-      font-family: 'Fraunces', Georgia, serif;
-      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+      font-style: normal;
       font-weight: 500;
       font-size: 18px;
       color: #1B4A38;
     }
     .price-info h3 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 22px;
       font-weight: 500;
       letter-spacing: -0.02em;
@@ -533,7 +543,7 @@
       opacity: 0.5;
     }
     .price-value {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 26px;
       font-weight: 500;
       letter-spacing: -0.02em;
@@ -599,15 +609,15 @@
       position: absolute;
       top: 8px;
       left: 32px;
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 96px;
       line-height: 1;
       color: #D4E8D0;
       font-weight: 700;
-      font-style: italic;
+      font-style: normal;
     }
     .founder-note p {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: clamp(17px, 1.9vw, 21px);
       line-height: 1.55;
       letter-spacing: -0.015em;
@@ -618,7 +628,7 @@
     }
     .founder-note p em {
       color: #1B4A38;
-      font-style: italic;
+      font-style: normal;
     }
     .founder-note p:last-of-type { margin-bottom: 24px; }
     .founder-sig {
@@ -719,7 +729,7 @@
       justify-content: space-between;
     }
     .note-strip .left h3 {
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -0.02em;
@@ -752,7 +762,7 @@
       border: none;
       text-align: left;
       padding: 26px 0;
-      font-family: 'Fraunces', Georgia, serif;
+      font-family: 'Lora', Georgia, serif;
       font-size: 19px;
       font-weight: 500;
       letter-spacing: -0.015em;
