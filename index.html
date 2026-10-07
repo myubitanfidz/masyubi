@@ -185,38 +185,57 @@
       .sec-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
     }
 
-    /* Trust strip */
+    /* Single-line trust strip with a seamless right-to-left loop. */
     .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px 28px;
+      overflow: hidden;
       padding: 20px 0;
       border-top: 1px solid #E5E1D6;
       border-bottom: 1px solid #E5E1D6;
       font-size: 13px;
-      color: rgba(26, 31, 26, 0.55);
+      color: rgba(26, 31, 26, 0.65);
+    }
+    .trust-track {
+      display: flex;
+      width: max-content;
+      animation: trust-scroll 32s linear infinite;
+    }
+    .trust-group {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 28px;
+      padding-right: 28px;
+      white-space: nowrap;
     }
     .trust-strip .item {
       display: inline-flex;
-      align-items: center;
-      gap: 10px;
+      flex: 0 0 auto;
+      align-items: baseline;
+      gap: 8px;
     }
     .trust-strip .item strong {
-      font-family: 'Lora', Georgia, serif;
-      font-weight: 500;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
       color: #1B4A38;
-      font-size: 16px;
-      letter-spacing: -0.01em;
+      font-size: 15px;
     }
     .trust-strip .divider {
+      flex: 0 0 1px;
       width: 1px;
       height: 14px;
       background: #E5E1D6;
     }
-    @media (max-width: 500px) {
-      .trust-strip { gap: 10px 20px; }
-      .trust-strip .divider { display: none; }
+    .trust-strip:hover .trust-track,
+    .trust-strip:focus .trust-track { animation-play-state: paused; }
+    .trust-strip:focus-visible { outline: 2px solid #3368A0; outline-offset: 3px; }
+    @keyframes trust-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .trust-strip { overflow-x: auto; }
+      .trust-track { animation: none; }
+      .trust-group[aria-hidden="true"] { display: none; }
     }
 
     /* Service bento */
@@ -928,14 +947,29 @@
   <!-- ============ TRUST STRIP ============ -->
   <section class="bg-white border-y border-[#E5E1D6]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="trust-strip">
-        <div class="item"><strong>3 tahun</strong> bantu UMKM online</div>
-        <span class="divider"></span>
-        <div class="item"><strong>15+</strong> proyek sudah tayang</div>
-        <span class="divider"></span>
-        <div class="item"><strong>30 hari</strong> garansi bug teknis</div>
-        <span class="divider"></span>
-        <div class="item">Domain & hosting dibantu urus</div>
+      <div class="trust-strip" tabindex="0" role="region" aria-label="Pengalaman dan layanan Masyubi. Fokuskan untuk menjeda animasi.">
+        <div class="trust-track">
+          <div class="trust-group">
+          <div class="item"><strong>3 tahun</strong> pengalaman membuat website</div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="item"><strong>10+</strong> website dibuat</div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="item"><strong>30 hari</strong> garansi bug teknis</div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="item">Domain &amp; hosting dibantu urus</div>
+          <span class="divider" aria-hidden="true"></span>
+          </div>
+          <div class="trust-group" aria-hidden="true">
+          <div class="item"><strong>3 tahun</strong> pengalaman membuat website</div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="item"><strong>10+</strong> website dibuat</div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="item"><strong>30 hari</strong> garansi bug teknis</div>
+          <span class="divider" aria-hidden="true"></span>
+          <div class="item">Domain &amp; hosting dibantu urus</div>
+          <span class="divider" aria-hidden="true"></span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
