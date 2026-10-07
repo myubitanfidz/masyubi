@@ -509,6 +509,29 @@
       .proc-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
+    /* Cream wave between pricing and FAQ */
+    #harga {
+      border-bottom: 0;
+    }
+    #harga > div {
+      padding-bottom: clamp(112px, 14vw, 220px);
+    }
+    .faq-section {
+      position: relative;
+      background: #F2EFE7;
+      border-top: 0;
+    }
+    .faq-wave {
+      position: absolute;
+      bottom: calc(100% - 1px);
+      left: 0;
+      width: 100%;
+      height: clamp(64px, 11vw, 180px);
+      display: block;
+      fill: #F2EFE7;
+      pointer-events: none;
+    }
+
     /* Pricing menu */
     .pricing-menu {
       border-top: 1px solid #E5E1D6;
@@ -1305,25 +1328,11 @@
     </div>
   </section>
 
-  <!-- ============ TENTANG (FOUNDER'S NOTE) ============ -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
-    <div class="founder-note">
-      <p>
-        Masyubi itu tim kecil. Bukan agency besar dengan kantor kaca. Kami mulai karena
-        banyak UMKM di sekitar kami punya produk bagus tapi <em>nggak punya "rumah" online</em> yang layak.
-      </p>
-      <p>
-        Kami pakai alat modern biar pengerjaan cepat, tapi setiap detail — foto mana yang dipakai,
-        warna tombolnya, urutan section — tetap kami cek manual. <em>Supaya hasilnya bukan template.</em>
-      </p>
-
-      <div class="founder-sig">— Masyubi</div>
-      <div class="founder-role">Tim kecil, sejak 2022</div>
-    </div>
-  </section>
-
   <!-- ============ FAQ ============ -->
-  <section id="faq" class="bg-white border-y border-[#E5E1D6]">
+  <section id="faq" class="faq-section border-b border-[#E5E1D6]">
+    <svg class="faq-wave" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 180 C100 165 135 172 230 135 S350 135 435 90 S555 85 625 100 S745 120 815 80 S950 95 1050 80 S1290 25 1440 0 L1440 200 L0 200 Z" />
+    </svg>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
       <div class="sec-head" style="margin-bottom: 36px;">
         <div>
