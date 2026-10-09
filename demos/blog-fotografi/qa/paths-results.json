@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-09T02:04:43.891Z",
+  "passed": 18,
+  "checks": [
+    "CSS and JS load: /demos/blog-fotografi",
+    "Hero image loads: /demos/blog-fotografi",
+    "Article link resolves: /demos/blog-fotografi",
+    "CSS and JS load: /demos/blog-fotografi/",
+    "Hero image loads: /demos/blog-fotografi/",
+    "Article link resolves: /demos/blog-fotografi/",
+    "CSS and JS load: /demos/blog-fotografi/index.html",
+    "Hero image loads: /demos/blog-fotografi/index.html",
+    "Article link resolves: /demos/blog-fotografi/index.html",
+    "CSS and JS load: /masyubi/demos/blog-fotografi",
+    "Hero image loads: /masyubi/demos/blog-fotografi",
+    "Article link resolves: /masyubi/demos/blog-fotografi",
+    "Normalization preserves query and hash",
+    "Shared filter and search still work",
+    "Slashless home fits 390px",
+    "Slashless home fits 1440px",
+    "File preview still loads CSS and JS",
+    "No failed demo assets or script errors"
+  ],
+  "errors": [],
+  "speculativeFailedResponses": [
+    "http://127.0.0.1:4184/demos/assets/css/style.css",
+    "http://127.0.0.1:4184/demos/assets/images/cahaya-600.webp",
+    "http://127.0.0.1:4184/demos/assets/js/main.js",
+    "http://127.0.0.1:4184/masyubi/demos/assets/css/style.css",
+    "http://127.0.0.1:4184/masyubi/demos/assets/images/cahaya-600.webp",
+    "http://127.0.0.1:4184/masyubi/demos/assets/js/main.js",
+    "http://127.0.0.1:4184/demos/assets/css/style.css",
+    "http://127.0.0.1:4184/demos/assets/js/main.js",
+    "http://127.0.0.1:4184/demos/assets/images/cahaya-600.webp",
+    "http://127.0.0.1:4184/demos/assets/css/style.css",
+    "http://127.0.0.1:4184/demos/assets/images/cahaya-600.webp",
+    "http://127.0.0.1:4184/demos/assets/js/main.js",
+    "http://127.0.0.1:4184/demos/assets/css/style.css",
+    "http://127.0.0.1:4184/demos/assets/images/cahaya.webp",
+    "http://127.0.0.1:4184/demos/assets/js/main.js"
+  ]
+}

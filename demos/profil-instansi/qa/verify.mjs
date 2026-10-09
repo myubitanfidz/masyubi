@@ -120,7 +120,7 @@ if (process.argv.includes('--serve')) {
     check('Return to portfolio works under GitHub Pages prefix',page.url()==='http://127.0.0.1:4178/masyubi/index.html#portofolio');
     for(const width of [390,1440]) {
       await page.setViewport({width,height:950});
-      for(const [name,url] of [['masyubi','index.html'],['ruang-seduh','demos/ruang-seduh/'],['rona','demos/rona/'],['batik-lokal','demos/batik-lokal/'],['profil-instansi','demos/profil-instansi/']]) {
+      for(const [name,url] of [['masyubi','index.html'],['ruang-seduh','demos/ruang-seduh/'],['rona','demos/rona/'],['blog-fotografi','demos/blog-fotografi/'],['profil-instansi','demos/profil-instansi/']]) {
         await load('http://127.0.0.1:4178/masyubi/'+url);
         await page.screenshot({path:path.join(output,`compare-${name}-${width}.png`)});
       }
