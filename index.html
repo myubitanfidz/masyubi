@@ -933,10 +933,7 @@
               <div class="w-9 h-9 sm:w-10 sm:h-10 bg-accent rounded-full flex items-center justify-center font-display font-bold text-primary text-sm sm:text-base flex-shrink-0">M</div>
               <div class="flex-1 min-w-0">
                 <p class="font-semibold text-sm">Masyubi</p>
-                <p class="text-xs text-ink/50 flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 bg-wa rounded-full"></span>
-                  online
-                </p>
+                <p class="text-xs text-ink/60 font-medium">Contoh percakapan</p>
               </div>
             </div>
 
@@ -1255,7 +1252,7 @@
       <div class="proc-item">
         <div class="proc-num">03</div>
         <h3>Pantau proses</h3>
-        <p>Dapat link khusus untuk lihat hasilnya setiap hari. Kasih masukan langsung.</p>
+        <p>Dapat link preview untuk melihat hasil pengerjaan dan update progres minimal dua kali seminggu. Kasih masukan langsung.</p>
         <div class="proc-time">3 hari – 8 minggu</div>
       </div>
 
@@ -1477,7 +1474,7 @@
         </div>
       </div>
 
-      <form id="contactForm" class="bg-white rounded-2xl p-6 sm:p-7 border border-[#E5E1D6] space-y-4">
+      <form id="contactForm" method="dialog" class="bg-white rounded-2xl p-6 sm:p-7 border border-[#E5E1D6] space-y-4">
 
         <label class="block">
           <span class="block text-sm font-medium text-ink mb-1.5">Nama kamu</span>
@@ -1516,6 +1513,10 @@
                 class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 rounded-pill transition shadow-soft flex items-center justify-center gap-2">
           <span id="submitText">Kirim via WhatsApp</span>
         </button>
+
+        <p id="contactFormFallback" role="status" class="text-xs text-ink/70 text-center leading-relaxed">
+          Formulir ini membutuhkan JavaScript agar data tidak muncul di alamat situs. Aktifkan JavaScript atau hubungi kami lewat WhatsApp maupun email di samping.
+        </p>
 
         <p class="text-xs text-ink/50 text-center">
           Kami nggak akan spam. Data kamu aman.

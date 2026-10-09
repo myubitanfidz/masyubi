@@ -37,6 +37,7 @@ window.addEventListener('scroll', () => {
 
 // ============ CONTACT FORM → KIRIM VIA WHATSAPP ============
 const form = document.getElementById('contactForm');
+const formFallback = document.getElementById('contactFormFallback');
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -51,11 +52,16 @@ form?.addEventListener('submit', (e) => {
   }
 
   const nomorWA = '62811142660';
-  const teks = `Halo Masyubi 👋%0A%0A` +
-    `Nama: ${encodeURIComponent(nama)}%0A` +
-    `Kontak: ${encodeURIComponent(kontak)}%0A` +
-    `Butuh: ${encodeURIComponent(kebutuhan)}%0A` +
-    (pesan ? `Cerita: ${encodeURIComponent(pesan)}%0A` : '');
+  const teks = [
+    'Halo Masyubi, saya mau konsultasi.',
+    '',
+    `Nama: ${nama}`,
+    `Kontak: ${kontak}`,
+    `Kebutuhan: ${kebutuhan}`,
+    ...(pesan ? [`Pesan: ${pesan}`] : [])
+  ].join('\n');
 
-  window.open(`https://wa.me/${nomorWA}?text=${teks}`, '_blank');
+  const urlWhatsApp = `https://wa.me/${nomorWA}?${new URLSearchParams({ text: teks })}`;
+  window.open(urlWhatsApp, '_blank', 'noopener,noreferrer');
 });
+if (form && formFallback) formFallback.hidden = true;
