@@ -2,7 +2,7 @@
 
 ## Ilustrasi produk
 
-`assets/images/camera-paper.webp`, `camera-charcoal.webp`, dan `camera-olive.webp` adalah render ilustrasi orisinal untuk demo ini (1200 ? 912 px, kualitas 90). Geometri, sudut, dan detail sama; warna bodi berbeda sesuai varian. `camera-detail.webp` memakai crop lensa dari gambar Paper yang sama. Hero menyematkan WebP Paper sebagai data URL dalam HTML. Ini ilustrasi konsep, bukan foto kamera yang diproduksi. `mark.svg` adalah favicon orisinal.
+`assets/images/camera-paper.webp`, `camera-charcoal.webp`, dan `camera-olive.webp` adalah render ilustrasi orisinal untuk demo ini (1200 x 912 px, kualitas 90). Geometri, sudut, dan detail sama; warna bodi berbeda sesuai varian. `camera-detail.webp` memakai crop lensa dari gambar Paper yang sama. Hero menyematkan WebP Paper sebagai data URL dalam HTML. Ini ilustrasi konsep, bukan foto kamera yang diproduksi. `mark.svg` adalah favicon orisinal.
 
 ## Galeri ilustrasi
 
@@ -10,14 +10,14 @@ Foto diunduh pada 7 Oktober 2026 dari CDN Unsplash dengan ID tetap, lalu disimpa
 
 [Lisensi Unsplash](https://unsplash.com/license) mengizinkan pengunduhan dan pemakaian gratis, termasuk komersial. Foto dipakai sebagai ilustrasi editorial demo, bukan endorsement atau klaim hasil kamera. Tidak ada foto produk kamera dari brand lain.
 
-| File | Sumber tetap |
-| --- | --- |
-| city.webp | https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b |
-| window.webp | https://images.unsplash.com/photo-1484154218962-a197022b5858 |
-| cafe.webp | https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb |
-| journey.webp | https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1 |
-| neighborhood.webp | https://images.unsplash.com/photo-1516483638261-f4dbaf036963 |
-| coffee.webp | https://images.unsplash.com/photo-1442512595331-e89e73853f31 |
+File dan sumber tetap:
+
+- `city.webp`: https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b
+- `window.webp`: https://images.unsplash.com/photo-1484154218962-a197022b5858
+- `cafe.webp`: https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb
+- `journey.webp`: https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1
+- `neighborhood.webp`: https://images.unsplash.com/photo-1516483638261-f4dbaf036963
+- `coffee.webp`: https://images.unsplash.com/photo-1442512595331-e89e73853f31
 
 ## Font
 
