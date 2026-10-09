@@ -15,4 +15,4 @@ Foto disimpan lokal sebagai WebP pada 8 Oktober 2026. Semua digunakan sebagai il
 
 Parameter unduhan: `w=1440` / `720` / `800`, `q=78–82`, `fit=crop`, `fm=webp`. Crop tampilan memakai object-fit tanpa mengubah file asli. Sumber tidak dimuat dari jaringan saat pengunjung membuka demo.
 
-`assets/images/mark.svg` dan simbol buku inline dibuat khusus untuk demo. Tidak memakai logo pihak lain. Tipografi menggunakan font sistem Arial/Georgia dan fallback yang sudah tersedia di perangkat; tidak ada aset font eksternal. Screenshot di `qa/` dihasilkan dari halaman lokal untuk verifikasi, bukan aset tampilan situs.
+`assets/images/mark.svg` dan simbol buku inline dibuat khusus untuk demo. Tidak memakai logo pihak lain. Tipografi menggunakan font sistem Arial/Georgia dan fallback yang sudah tersedia di perangkat; tidak ada aset font eksternal.

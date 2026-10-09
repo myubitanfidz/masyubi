@@ -2,7 +2,7 @@
 
 ## Ilustrasi produk
 
-`assets/images/camera-paper.svg`, `camera-charcoal.svg`, dan `camera-olive.svg` adalah ilustrasi SVG orisinal yang dibuat untuk demo ini. Geometri, sudut, dan detail sama; warna bodi berbeda sesuai varian. `camera-detail.svg` memakai crop lensa dari gambar Paper yang sama. Website memakai render WebP dari masing-masing SVG (1200 × 912 px, kualitas 90) untuk mengurangi biaya rendering. Hero menyematkan WebP Paper sebagai data URL dalam HTML agar tampil tanpa permintaan gambar awal dan tetap mendukung URL folder tanpa slash. Sumber SVG tetap disertakan untuk penyuntingan. Ini ilustrasi konsep, bukan foto kamera yang diproduksi. `mark.svg` adalah favicon orisinal.
+`assets/images/camera-paper.webp`, `camera-charcoal.webp`, dan `camera-olive.webp` adalah render ilustrasi orisinal untuk demo ini (1200 ? 912 px, kualitas 90). Geometri, sudut, dan detail sama; warna bodi berbeda sesuai varian. `camera-detail.webp` memakai crop lensa dari gambar Paper yang sama. Hero menyematkan WebP Paper sebagai data URL dalam HTML. Ini ilustrasi konsep, bukan foto kamera yang diproduksi. `mark.svg` adalah favicon orisinal.
 
 ## Galeri ilustrasi
 
