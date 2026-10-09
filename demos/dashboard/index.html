@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5145cd">
+  <meta name="description" content="Demo Lajur: kelola pesanan, pantau penjualan, dan temukan data pelanggan dalam satu dashboard bisnis.">
+  <title>Lajur — Dashboard Pesanan</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5v8l-9 5-9-5V8zM3 8l9 5 9-5M12 13v8M7.5 5.5l9 5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 8H5a2 2 0 0 1 0-4h13v4M4 8v12h17V8M21 12h-6v4h6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 5 2c-1 .5-2 1-2 3m0 3h.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#main">Lewati navigasi</a>
+  <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+    <a class="brand" href="./" aria-label="Lajur, halaman ringkasan"><img src="mark.svg" width="34" height="34" alt="">lajur<span class="brand-dot">.</span></a>
+    <div class="workspace"><span class="workspace-mark">NK</span><div><strong>Nusa Kantor</strong><small>Ruang kerja bisnis</small></div><span class="workspace-dot" title="Data demo lokal"></span></div>
+    <p class="nav-label">RUANG KERJA</p>
+    <nav>
+      <button class="nav-item active" data-view="overview" aria-current="page"><svg><use href="#i-grid"/></svg>Ringkasan</button>
+      <button class="nav-item" data-view="orders"><svg><use href="#i-box"/></svg>Pesanan<span id="nav-count" class="nav-count">18</span></button>
+      <button class="nav-item" data-view="customers"><svg><use href="#i-users"/></svg>Pelanggan</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="demo-note"><span class="small-dot"></span> RUANG DEMO<p>Coba alur kerjanya.<br>Data tersimpan di browser ini.</p><button id="reset-demo">Atur ulang data <span aria-hidden="true">↗</span></button></div>
+      <button class="nav-item" id="help-button"><svg><use href="#i-help"/></svg>Panduan singkat</button>
+      <a class="portfolio-link" href="../../#portofolio">← Kembali ke Masyubi</a>
+      <div class="profile"><span class="avatar">AP</span><div><strong>Aditya Pratama</strong><small>Admin operasional</small></div></div>
+    </div>
+  </aside>
+  <button class="menu-backdrop" id="menu-backdrop" aria-label="Tutup navigasi" hidden></button>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb"><button class="icon-button mobile-menu" id="menu-toggle" aria-label="Buka navigasi" aria-controls="sidebar" aria-expanded="false"><svg><use href="#i-menu"/></svg></button><span>Ruang kerja</span><span aria-hidden="true">/</span><strong id="breadcrumb-current">Ringkasan</strong></div>
+      <div class="topbar-right"><span class="demo-badge">Demo interaktif</span><span class="avatar avatar-small" aria-label="Aditya Pratama">AP</span></div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="page-heading"><div><p class="eyebrow">OPERASIONAL · NUSA KANTOR</p><h1 id="page-title">Semua terkendali.</h1><p id="page-description">Pantau pesanan dan lihat bagaimana bisnis Anda bergerak.</p></div><label class="period-control"><svg><use href="#i-clock"/></svg><span class="sr-only">Periode data</span><select id="period"><option value="2026-10">Oktober 2026</option><option value="2026-09">September 2026</option><option value="all">Semua periode</option></select></label></div>
+      <section class="stats" aria-label="Ringkasan periode terpilih">
+        <article class="stat"><div class="stat-label">Nilai pesanan<svg><use href="#i-wallet"/></svg></div><strong id="stat-value">—</strong><span id="stat-value-note">Pesanan di luar pembatalan</span></article>
+        <article class="stat"><div class="stat-label">Total pesanan<svg><use href="#i-box"/></svg></div><strong id="stat-orders">—</strong><span id="stat-orders-note">Dalam periode terpilih</span></article>
+        <article class="stat"><div class="stat-label">Perlu diproses<svg><use href="#i-clock"/></svg></div><strong id="stat-pending">—</strong><span><span class="small-dot amber"></span> Menunggu konfirmasi tim</span></article>
+        <article class="stat"><div class="stat-label">Pelanggan aktif<svg><use href="#i-users"/></svg></div><strong id="stat-customers">—</strong><span>Pelanggan dengan pesanan</span></article>
+      </section>
+      <section class="overview-grid" id="overview-section" aria-label="Aktivitas penjualan">
+        <article class="chart-panel"><div class="panel-heading"><div><h2>Perjalanan pesanan</h2><p>Nilai pesanan per minggu, di luar pembatalan</p></div><span class="chart-legend"><i></i> Nilai pesanan</span></div><div class="chart" id="chart" role="img" aria-label="Grafik nilai pesanan"></div><div class="chart-foot"><span id="chart-caption">Periode Oktober 2026</span><span>Dalam juta rupiah</span></div></article>
+        <article class="attention-panel"><div class="attention-icon"><svg><use href="#i-clock"/></svg></div><p class="eyebrow">BUTUH PERHATIAN</p><h2 id="attention-title">Ada pesanan menunggu.</h2><p id="attention-description"></p><div class="attention-customers" id="attention-customers"></div><button class="text-button" id="review-pending">Tinjau pesanan <svg><use href="#i-arrow"/></svg></button></article>
+      </section>
+      <section class="data-panel" aria-labelledby="table-title">
+        <div class="data-heading"><div><h2 id="table-title">Daftar pesanan <span class="count-pill" id="table-count">18</span></h2><p id="table-description">Dari pesanan masuk sampai diterima pelanggan.</p></div><div class="action-group"><button class="button" id="export-button"><svg><use href="#i-download"/></svg>Ekspor CSV</button><button class="button primary" id="add-button"><svg><use href="#i-plus"/></svg>Tambah pesanan</button></div></div>
+        <div class="status-tabs" id="status-tabs" role="group" aria-label="Filter status pesanan"></div>
+        <div class="table-tools"><label class="search-field"><svg><use href="#i-search"/></svg><span class="sr-only">Cari pesanan atau pelanggan</span><input type="search" id="search" placeholder="Cari pesanan atau pelanggan…" autocomplete="off"></label><div class="select-filters"><label><span class="sr-only">Kategori produk</span><select id="category"><option value="all">Semua kategori</option><option>Alat tulis</option><option>Kertas & cetak</option><option>Perlengkapan kantor</option></select></label><label><span class="sr-only">Urutkan data</span><select id="sort"><option value="newest">Terbaru</option><option value="oldest">Terlama</option><option value="highest">Nilai tertinggi</option><option value="name">Nama A–Z</option></select></label><button class="clear-button" id="clear-filters" hidden>Reset filter</button></div></div>
+        <div id="result-announcement" class="sr-only" role="status" aria-live="polite"></div>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Tabel data, geser untuk melihat semua kolom"><table><caption class="sr-only" id="table-caption">Daftar pesanan Nusa Kantor</caption><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div>
+        <div class="empty-state" id="empty-state" hidden><span class="empty-icon"><svg><use href="#i-search"/></svg></span><h3>Belum ada yang cocok</h3><p>Coba kata kunci lain atau hapus filter yang digunakan.</p><button class="button" id="empty-reset">Tampilkan semua data</button></div>
+        <div class="table-footer"><p id="pagination-info"></p><div class="pagination"><button class="button" id="prev-page" aria-label="Halaman sebelumnya">←</button><span id="page-info">1 / 2</span><button class="button" id="next-page" aria-label="Halaman berikutnya">→</button></div></div>
+      </section>
+      <footer class="page-footer"><span><span class="small-dot"></span> Data contoh · Tidak terhubung ke transaksi nyata</span><span>Lajur oleh <a href="../../#portofolio">Masyubi</a></span></footer>
+      <noscript><p class="noscript">Aktifkan JavaScript untuk menampilkan data dan menggunakan dashboard ini.</p></noscript>
+    </main>
+  </div>
+  <dialog id="order-dialog" class="form-dialog" aria-labelledby="order-dialog-title"><form id="order-form"><div class="dialog-heading"><div><p class="eyebrow">PESANAN BARU</p><h2 id="order-dialog-title">Catat pesanan</h2></div><button type="button" class="icon-button" data-close aria-label="Tutup formulir"><svg><use href="#i-close"/></svg></button></div><p class="dialog-intro">Lengkapi informasi pesanan. Nomor pesanan dibuat otomatis.</p><label>Nama pelanggan<input name="customer" required maxlength="80" placeholder="Contoh: PT Arunika Digital"></label><label>Email pelanggan<input name="email" type="email" required maxlength="100" placeholder="admin@arunika.co.id"></label><div class="form-grid"><label>Kategori<select name="category"><option>Alat tulis</option><option>Kertas & cetak</option><option>Perlengkapan kantor</option></select></label><label>Tanggal<input name="date" type="date" min="2020-01-01" max="2100-12-31" required></label></div><label>Ringkasan produk<input name="product" required maxlength="120" placeholder="Contoh: 20 rim kertas A4 80 gsm"></label><div class="form-grid"><label>Nilai pesanan (Rp)<input name="amount" type="number" min="1000" max="1000000000" step="1000" required placeholder="1500000"></label><label>Status<select name="status"><option>Menunggu</option><option>Diproses</option><option>Dikirim</option><option>Selesai</option><option>Dibatalkan</option></select></label></div><label>Catatan <span class="optional">(opsional)</span><textarea name="notes" maxlength="500" rows="2" placeholder="Alamat kirim atau catatan untuk tim"></textarea></label><p id="order-error" class="form-error" role="alert" hidden></p><div class="dialog-actions"><button type="button" class="button" data-close>Batal</button><button type="submit" class="button primary">Simpan pesanan</button></div></form></dialog>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div class="dialog-heading"><div><p class="eyebrow" id="detail-eyebrow">DETAIL PESANAN</p><h2 id="detail-title"></h2></div><button class="icon-button" data-close aria-label="Tutup detail"><svg><use href="#i-close"/></svg></button></div><div id="detail-content"></div></dialog>
+  <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title"><div class="dialog-heading"><h2 id="help-title">Mulai dari satu pesanan.</h2><button class="icon-button" data-close aria-label="Tutup panduan"><svg><use href="#i-close"/></svg></button></div><p>Lajur membantu tim Nusa Kantor mengelola pesanan perlengkapan kerja dari pelanggan bisnis.</p><ol><li><strong>Pantau ringkasan.</strong> Pilih periode untuk melihat nilai pesanan dan pekerjaan yang menunggu.</li><li><strong>Temukan data.</strong> Gabungkan pencarian, status, dan kategori. Ekspor CSV mengikuti hasil filter.</li><li><strong>Kelola pesanan.</strong> Tambahkan data atau buka Detail untuk memperbarui status.</li><li><strong>Kenali pelanggan.</strong> Halaman Pelanggan merangkum pesanan per alamat email.</li></ol><p>Ini demo dengan data fiktif. Perubahan disimpan hanya di browser ini. Gunakan “Atur ulang data” untuk kembali ke data awal.</p><button class="button primary" data-close>Mulai menjelajah</button></dialog>
+  <dialog id="reset-dialog" class="help-dialog" aria-labelledby="reset-title"><h2 id="reset-title">Kembalikan data awal?</h2><p>Pesanan yang Anda tambahkan dan perubahan status di browser ini akan diganti dengan data contoh.</p><div class="dialog-actions"><button class="button" data-close>Batal</button><button class="button primary" id="confirm-reset">Ya, atur ulang</button></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
