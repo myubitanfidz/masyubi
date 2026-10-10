@@ -622,55 +622,7 @@ section {
   font-size: 1rem;
 }
 
-/* ===== SERVICES ===== */
-.services {
-  background: var(--light);
-}
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-}
-
-.service-card {
-  background: var(--white);
-  padding: 36px 28px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid transparent;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(6, 20, 49, 0.15);
-}
-
-.service-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 14px;
-  background: #eff6ff;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin-bottom: 20px;
-}
-
-.service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  font-weight: 700;
-}
-
-.service-card p {
-  color: var(--gray);
-  font-size: 0.95rem;
-}
 
 /* ===== CONTACT HERO ===== */
 .contact-hero {
