@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Placeholder Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tentang Kami</h2>
+          <p>Kenali lebih dekat siapa kami dan apa yang kami lakukan</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-img">🏢</div>
+          <div class="about-text">
+            <h3>Berkomitmen Memberikan yang Terbaik</h3>
+            <p>Napdev adalah perusahaan yang bergerak di bidang layanan profesional dengan pengalaman lebih dari 8 tahun. Kami berfokus pada kualitas, inovasi, dan kepuasan pelanggan.</p>
+            <p>Dengan tim yang berpengalaman dan berdedikasi, kami siap membantu mewujudkan visi bisnis Anda.</p>
+            <div class="about-stats">
+              <div class="stat">
+                <h4>500+</h4>
+                <p>Klien Puas</p>
+              </div>
+              <div class="stat">
+                <h4>8+</h4>
+                <p>Tahun Pengalaman</p>
+              </div>
+              <div class="stat">
+                <h4>50+</h4>
+                <p>Tim Profesional</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Placeholder Footer -->
+    <div id="footer-placeholder"></div>
+
+
+
+<!-- Script untuk navbar dan footer -->
+  <script>
+    // Load Navbar
+    fetch('component/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    // Load Footer
+    fetch('component/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
