@@ -419,92 +419,186 @@ section {
   font-size: 0.95rem;
 }
 
-/* ===== CONTACT ===== */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+/* ===== CONTACT HERO ===== */
+.contact-hero {
+  background: #0a0a0a;
+  padding: 160px 0 80px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-info h3 {
-  font-size: 1.5rem;
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -2px;
   margin-bottom: 20px;
-  font-weight: 700;
+  line-height: 1.1;
 }
 
-.contact-item {
+.contact-hero h1 span {
+  color: #6366f1;
+}
+
+.contact-hero-desc {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+/* ===== SOCIAL SECTION ===== */
+.social-section {
+  background: #0a0a0a;
+  padding: 20px 0 120px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Kartu sosial */
+.social-card {
   display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
-  align-items: flex-start;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 26px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.contact-item .icon {
-  width: 44px;
-  height: 44px;
-  background: #eff6ff;
-  color: var(--primary);
-  border-radius: 10px;
+.social-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px -10px var(--accent);
+}
+
+.social-card:hover::before {
+  opacity: 0.08;
+}
+
+/* Ikon */
+.social-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
   flex-shrink: 0;
+  transition: all 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.social-card:hover .social-icon {
+  background: var(--accent);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Teks */
+.social-info {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.social-info h3 {
   font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 3px;
+  letter-spacing: -0.3px;
 }
 
-.contact-item h4 {
-  font-size: 1rem;
-  margin-bottom: 4px;
+.social-info p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
-.contact-item p {
-  color: var(--gray);
-  font-size: 0.95rem;
+/* Panah */
+.social-arrow {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.2);
+  transition: all 0.35s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.contact-form {
-  background: var(--light);
-  padding: 36px;
-  border-radius: var(--radius);
+.social-card:hover .social-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
+/* Warna aksen per platform */
+.social-card.discord   { --accent: #5865F2; }
+.social-card.gmail     { --accent: #EA4335; }
+.social-card.instagram { --accent: #E4405F; }
+.social-card.youtube   { --accent: #FF0000; }
 
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
+/* ===== RESPONSIVE CONTACT ===== */
+@media (max-width: 768px) {
+  .contact-hero {
+    padding: 120px 0 60px;
+  }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.95rem;
-  transition: var(--transition);
-  background: var(--white);
-}
+  .social-section {
+    padding: 10px 0 80px;
+  }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(6, 20, 49, 0.1);
-}
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+  .social-card {
+    padding: 20px;
+  }
 
-.contact-form .btn {
-  width: 100%;
+  .social-icon {
+    width: 46px;
+    height: 46px;
+  }
 }
 
 /* ===== FOOTER ===== */
