@@ -38,44 +38,52 @@ img {
   margin: 0 auto;
   padding: 0 20px;
 }
+
 /* ===== NAVBAR ===== */
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1); /* Hitam dengan opacity 10% */
+  backdrop-filter: blur(10px); /* Tetap gunakan blur agar teks tetap terbaca */
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
   z-index: 100;
 }
+
 .nav-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 20px;
 }
+
 .logo {
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--primary);
+  color: #ffffff; /* Teks putih */
   letter-spacing: -0.5px;
 }
+
 .logo span {
-  color: var(--dark);
+  color: #ffffff; /* Pastikan semua bagian logo berwarna putih */
 }
+
 .nav-links {
   display: flex;
   gap: 32px;
   list-style: none;
 }
+
 .nav-links a {
   font-weight: 500;
-  color: var(--gray);
+  color: #ffffff; /* Teks putih */
   transition: var(--transition);
   position: relative;
 }
+
 .nav-links a:hover {
-  color: var(--primary);
+  color: #d1d5db; /* Warna abu terang saat di-hover */
 }
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -83,9 +91,10 @@ img {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--primary);
+  background: #ffffff; /* Garis bawah putih */
   transition: var(--transition);
 }
+
 .nav-links a:hover::after {
   width: 100%;
 }
