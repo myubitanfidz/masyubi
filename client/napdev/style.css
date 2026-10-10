@@ -147,7 +147,7 @@ img {
   left: 50%;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;         /* Memenuhi seluruh area tanpa distorsi */
+  object-fit: cover;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0;
@@ -319,54 +319,307 @@ section {
   margin: 20px auto 0;
 }
 
-/* ===== ABOUT ===== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+/* ===== ABOUT PAGE ===== */
+.about-page {
+  padding: 0;
 }
 
-.about-img {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, #dbeafe, #93c5fd);
+/* ===== ABOUT HERO (Background Foto) ===== */
+.about-hero {
+  position: relative;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  background: #0a0a0a;
+  padding: 160px 0 100px;
+  isolation: isolate;
+}
+
+/* Container foto background */
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Foto fullscreen cover */
+.about-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+  display: block;
+}
+
+/* Overlay gelap biar teks terbaca */
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.4) 40%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Konten di atas foto */
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.about-hero h1 span {
+  color: #60a5fa;
+}
+
+.about-hero-desc {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 550px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* ===== BARIS 1: Profile Circle Besar + About Brief ===== */
+.about-top {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 100px 0 80px;
+}
+
+/* Wrapper circle besar */
+.profile-circle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Circle besar */
+.profile-circle {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  border: 8px solid var(--white);
+  box-shadow:
+    0 20px 60px rgba(99, 102, 241, 0.35),
+    0 0 0 12px rgba(99, 102, 241, 0.08);
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Efek glow di belakang */
+.profile-circle::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50%      { transform: scale(1.1); opacity: 1; }
+}
+
+.profile-circle:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+/* Kalau pakai gambar di dalam circle */
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* About Brief (kanan) */
+.about-brief {
+  padding-left: 20px;
+}
+
+.about-brief h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+
+.about-brief h2 span {
   color: var(--primary);
-  font-size: 4rem;
 }
 
-.about-text h3 {
-  font-size: 1.75rem;
-  margin-bottom: 16px;
-  font-weight: 700;
-}
-
-.about-text p {
+.about-brief p {
   color: var(--gray);
-  margin-bottom: 16px;
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  max-width: 560px;
 }
 
+/* Stats — HORIZONTAL */
 .about-stats {
   display: flex;
-  gap: 32px;
-  margin-top: 32px;
+  gap: 48px;
+  margin-top: 0;
 }
 
 .stat h4 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: var(--primary);
   font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
 }
 
 .stat p {
   font-size: 0.9rem;
   color: var(--gray);
   margin: 0;
+  white-space: nowrap;
+}
+
+/* ===== BARIS 2: Deskripsi Lengkap ===== */
+.about-full {
+  padding: 80px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.about-full-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-full-content p {
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.about-full-content p strong {
+  color: var(--dark);
+}
+
+/* ===== BARIS 3: Visi & Misi (Layout Kiri-Kanan) ===== */
+.vision-mission {
+  padding: 60px 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Blok umum */
+.vm-block {
+  position: relative;
+}
+
+/* Judul dengan aksen bar */
+.vm-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--dark);
+  text-transform: lowercase;
+}
+
+/* Aksen bar vertikal */
+.vm-bar {
+  display: inline-block;
+  width: 6px;
+  height: 1em;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+/* ===== VISI (kiri) ===== */
+.vm-visi {
+  max-width: 60%;
+  text-align: left;
+}
+
+.vm-visi .vm-title {
+  justify-content: flex-start;
+}
+
+.vm-visi .vm-desc {
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 100%;
+}
+
+/* ===== MISI (kanan) ===== */
+.vm-misi {
+  max-width: 60%;
+  text-align: right;
+  margin-left: auto;
+}
+
+.vm-misi .vm-title {
+  justify-content: flex-end;
+}
+
+.vm-misi .mission-list {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+.vm-misi .mission-list li {
+  color: var(--gray);
+  padding-right: 28px;
+  margin-bottom: 12px;
+  position: relative;
+  line-height: 1.8;
+}
+
+/* Centang di sebelah KANAN */
+.vm-misi .mission-list li::before {
+  content: '✓';
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1rem;
 }
 
 /* ===== SERVICES ===== */
@@ -576,31 +829,6 @@ section {
 .social-card.instagram { --accent: #E4405F; }
 .social-card.youtube   { --accent: #FF0000; }
 
-/* ===== RESPONSIVE CONTACT ===== */
-@media (max-width: 768px) {
-  .contact-hero {
-    padding: 120px 0 60px;
-  }
-
-  .social-section {
-    padding: 10px 0 80px;
-  }
-
-  .social-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .social-card {
-    padding: 20px;
-  }
-
-  .social-icon {
-    width: 46px;
-    height: 46px;
-  }
-}
-
 /* ===== FOOTER ===== */
 footer {
   background: var(--dark);
@@ -644,8 +872,113 @@ footer {
   color: #64748b;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE ABOUT ===== */
+@media (max-width: 968px) {
+  .about-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 0;
+  }
+
+  .profile-circle {
+    width: 260px;
+    height: 260px;
+    font-size: 6rem;
+    border-width: 6px;
+  }
+
+  .about-brief {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .about-stats {
+    gap: 32px;
+  }
+
+  .stat h4 {
+    font-size: 1.75rem;
+  }
+}
+
 @media (max-width: 768px) {
+  /* About Hero — Responsive */
+  .about-hero {
+    min-height: 60vh;
+    padding: 120px 0 80px;
+  }
+
+  .about-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .about-hero-desc {
+    font-size: 1rem;
+  }
+
+  /* Visi & Misi — jadi 1 kolom, rata kiri semua */
+  .vision-mission {
+    gap: 50px;
+    padding-bottom: 80px;
+  }
+
+  .vm-visi,
+  .vm-misi {
+    max-width: 100%;
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .vm-misi .vm-title {
+    justify-content: flex-start;
+  }
+
+  .vm-misi .mission-list {
+    text-align: left;
+  }
+
+  .vm-misi .mission-list li {
+    padding-right: 0;
+    padding-left: 28px;
+  }
+
+  .vm-misi .mission-list li::before {
+    right: auto;
+    left: 0;
+  }
+
+  .about-full {
+    padding: 60px 0;
+  }
+
+  .about-full-content p {
+    font-size: 1rem;
+  }
+
+  /* Contact responsive */
+  .contact-hero {
+    padding: 120px 0 60px;
+  }
+
+  .social-section {
+    padding: 10px 0 80px;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .social-card {
+    padding: 20px;
+  }
+
+  .social-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* Navbar & Hero responsive */
   .nav-links {
     display: none;
   }
@@ -678,12 +1011,6 @@ footer {
     text-align: center;
   }
 
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -695,5 +1022,19 @@ footer {
 
   .about-stats {
     gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .profile-circle {
+    width: 200px;
+    height: 200px;
+    font-size: 5rem;
+    border-width: 5px;
   }
 }

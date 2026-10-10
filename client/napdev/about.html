@@ -1,67 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami</title>
+    <title>Tentang Kami — Napdev</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Placeholder Navbar -->
     <div id="navbar-placeholder"></div>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>Tentang Kami</h2>
-          <p>Kenali lebih dekat siapa kami dan apa yang kami lakukan</p>
-        </div>
-        <div class="about-grid">
-          <div class="about-img">🏢</div>
-          <div class="about-text">
-            <h3>Berkomitmen Memberikan yang Terbaik</h3>
-            <p>Napdev adalah perusahaan yang bergerak di bidang layanan profesional dengan pengalaman lebih dari 8 tahun. Kami berfokus pada kualitas, inovasi, dan kepuasan pelanggan.</p>
-            <p>Dengan tim yang berpengalaman dan berdedikasi, kami siap membantu mewujudkan visi bisnis Anda.</p>
-            <div class="about-stats">
-              <div class="stat">
-                <h4>500+</h4>
-                <p>Klien Puas</p>
-              </div>
-              <div class="stat">
-                <h4>8+</h4>
-                <p>Tahun Pengalaman</p>
-              </div>
-              <div class="stat">
-                <h4>50+</h4>
-                <p>Tim Profesional</p>
-              </div>
+    <!-- ===== ABOUT PAGE ===== -->
+    <section class="about-page">
+
+        <!-- ===== ABOUT HERO (Background Foto) ===== -->
+        <section class="about-hero">
+            <div class="about-hero-bg" aria-hidden="true">
+                <img src="img/foto-bareng.JPG" alt="" />
             </div>
-          </div>
+            <div class="about-hero-overlay"></div>
+            <div class="container about-hero-content">
+                <p class="hero-tagline">ABOUT US</p>
+                <h1>Tentang <span>kami</span></h1>
+            </div>
+        </section>
+
+        <!-- ===== BARIS 1: Profile Circles + About Singkat ===== -->
+        <div class="container">
+            <div class="about-top">
+
+                <!-- Kiri: 1 Profile Circle Besar -->
+                <div class="profile-circle-wrapper">
+                    <div class="profile-circle">
+                        <img src="img/logo.jpg" alt="Logo Napdev" />
+                    </div>
+                </div>
+
+                <!-- Kanan: About Singkat (rasio 3) -->
+                <div class="about-brief">
+                    <h2>Napdev</h2>
+                    <p>
+                        berawal dari sebuah kesukaan bermain game menjadi sebuah passion untuk menciptakan game sendiri.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- ===== BARIS 2: Deskripsi Lengkap ===== -->
+            <div class="about-full">
+                <div class="section-header">
+                    <h2>Siapa Kami</h2>
+                    <p>Cerita lengkap di balik Napdev</p>
+                </div>
+                <div class="about-full-content">
+                    <p>
+                        <strong>Napdev</strong> adalah perusahaan teknologi yang berfokus pada pengembangan
+                        produk digital, mulai dari website, aplikasi mobile, game, hingga solusi
+                        enterprise. Kami percaya bahwa teknologi yang baik harus terasa sederhana,
+                        cepat, dan menyenangkan bagi penggunanya.
+                    </p>
+                    <p>
+                        Selama lebih dari 8 tahun, kami telah bekerja sama dengan berbagai klien —
+                        dari startup lokal hingga perusahaan multinasional. Setiap proyek kami
+                        perlakukan sebagai kemitraan jangka panjang, bukan sekadar transaksi.
+                    </p>
+                    <p>
+                        Kami menggabungkan keahlian teknis, desain yang thoughtful, dan strategi
+                        bisnis yang matang untuk menghasilkan produk yang tidak hanya indah,
+                        tetapi juga berdampak nyata pada pertumbuhan bisnis klien kami.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ===== BARIS 3: Visi & Misi ===== -->
+            <div class="vision-mission">
+            
+                <!-- Visi (kiri) -->
+                <div class="vm-block vm-visi">
+                    <h3 class="vm-title">
+                        <span class="vm-bar"></span>visi
+                    </h3>
+                    <p class="vm-desc">
+                        Menjadi perusahaan pengembangan produk digital terdepan di Asia Tenggara
+                        yang dikenal karena kualitas, inovasi, dan dampak positifnya bagi
+                        pertumbuhan bisnis dan masyarakat.
+                    </p>
+                </div>
+              
+                <!-- Misi (kanan) -->
+                <div class="vm-block vm-misi">
+                    <h3 class="vm-title">
+                        misi<span class="vm-bar"></span>
+                    </h3>
+                    <ul class="mission-list">
+                        <li>Menciptakan produk digital yang berkualitas tinggi dan mudah digunakan.</li>
+                        <li>Membantu bisnis dari berbagai skala untuk bertransformasi secara digital.</li>
+                        <li>Membangun tim yang solid, kolaboratif, dan terus belajar.</li>
+                        <li>Menjaga integritas, transparansi, dan kepuasan klien dalam setiap proyek.</li>
+                    </ul>
+                </div>
+              
+            </div>
         </div>
-      </div>
+
     </section>
 
     <!-- Placeholder Footer -->
     <div id="footer-placeholder"></div>
 
+    <!-- Script untuk navbar dan footer -->
+    <script>
+        fetch('component/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
 
+        fetch('component/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 
-<!-- Script untuk navbar dan footer -->
-  <script>
-    // Load Navbar
-    fetch('component/navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-      });
-
-    // Load Footer
-    fetch('component/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-      });
-  </script>
 </body>
 </html>
