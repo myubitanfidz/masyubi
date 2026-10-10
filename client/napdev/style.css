@@ -140,18 +140,17 @@ img {
   overflow: hidden;
 }
 
-/* Iframe — fullscreen & diperbesar sedikit */
-.hero-video iframe {
+/* Video file (.mp4) — fullscreen cover */
+.hero-video-bg {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: 56.25vw;
-  min-height: 100vh;
-  min-width: 177.77vh;
-  transform: translate(-50%, -50%) scale(1.15);
-  border: 0;
+  height: 100vh;
+  object-fit: cover;         /* Memenuhi seluruh area tanpa distorsi */
+  transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 0;
 }
 
 /* Overlay gelap */
