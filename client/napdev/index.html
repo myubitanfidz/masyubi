@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Napdev</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Placeholder Navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Solusi Terbaik untuk <span>Bisnis Anda</span></h1>
+      <p>Kami membantu bisnis Anda tumbuh dengan layanan profesional, inovatif, dan terpercaya sejak 2015.</p>
+      <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tentang Kami</h2>
+        <p>Kenali lebih dekat siapa kami dan apa yang kami lakukan</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-img">🏢</div>
+        <div class="about-text">
+          <h3>Berkomitmen Memberikan yang Terbaik</h3>
+          <p>Napdev adalah perusahaan yang bergerak di bidang layanan profesional dengan pengalaman lebih dari 8 tahun. Kami berfokus pada kualitas, inovasi, dan kepuasan pelanggan.</p>
+          <p>Dengan tim yang berpengalaman dan berdedikasi, kami siap membantu mewujudkan visi bisnis Anda.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <h4>500+</h4>
+              <p>Klien Puas</p>
+            </div>
+            <div class="stat">
+              <h4>8+</h4>
+              <p>Tahun Pengalaman</p>
+            </div>
+            <div class="stat">
+              <h4>50+</h4>
+              <p>Tim Profesional</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Layanan Kami</h2>
+        <p>Berbagai solusi yang kami tawarkan untuk kebutuhan bisnis Anda</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💼</div>
+          <h3>Konsultasi Bisnis</h3>
+          <p>Membantu Anda merancang strategi bisnis yang tepat sasaran dan berkelanjutan.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Pengembangan Digital</h3>
+          <p>Pembuatan website, aplikasi, dan solusi digital yang modern dan responsif.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Digital Marketing</h3>
+          <p>Strategi pemasaran digital untuk meningkatkan jangkauan dan penjualan Anda.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Desain Kreatif</h3>
+          <p>Desain logo, branding, dan materi visual yang menarik dan profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Hubungi Kami</h2>
+        <p>Ada pertanyaan atau ingin bekerja sama? Kirim pesan kepada kami</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Informasi Kontak</h3>
+          <div class="contact-item">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Alamat</h4>
+              <p>Jl. Contoh No. 123, Jakarta, Indonesia</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Telepon</h4>
+              <p>+62 812-3456-7890</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@napdev.com</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Pesan terkirim!');">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="nama@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" placeholder="Tulis pesan Anda..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Placeholder Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Script untuk navbar dan footer -->
+  <script>
+    // Load Navbar
+    fetch('component/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+
+    // Load Footer
+    fetch('component/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
