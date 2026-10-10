@@ -12,51 +12,111 @@
   <div id="navbar-placeholder"></div>
 
   <!-- ===== HERO ===== -->
-<section class="hero" id="home">
+  <section class="hero" id="home">
 
-  <!-- Video Background -->
-  <div class="hero-video" aria-hidden="true">
-    <video
-      class="hero-video-bg"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto">
-      <source src="videos/beranda.mp4" type="video/mp4" />
-      Browser kamu tidak mendukung tag video.
-    </video>
-  </div>
-
-  <!-- Overlay Gelap -->
-  <div class="hero-overlay"></div>
-
-  <!-- Konten Hero -->
-  <div class="container hero-content">
-    <div class="hero-buttons">
-      
+    <!-- Video Background -->
+    <div class="hero-video" aria-hidden="true">
+      <video
+        class="hero-video-bg"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+        <source src="videos/beranda.mp4" type="video/mp4" />
+        Browser kamu tidak mendukung tag video.
+      </video>
     </div>
-  </div>
 
-</section>
+    <!-- Overlay Gelap -->
+    <div class="hero-overlay"></div>
 
-  
+    <!-- Konten Hero (kosong, biar video terlihat) -->
+    <div class="container hero-content"></div>
 
-  
+  </section>
+
+  <!-- ===== OUR PROJECT ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Project</h2>
+        <p>Beberapa karya yang telah kami kerjakan</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <a href="#" class="project-card">
+          <div class="project-img">
+            <img src="img/project-1.jpg" alt="Project 1" />
+          </div>
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3>Project Alpha</h3>
+              <p>Game RPG mobile dengan sistem pertarungan real-time dan cerita epik.</p>
+              <span class="project-link">Lihat Detail →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 2 -->
+        <a href="#" class="project-card">
+          <div class="project-img">
+            <img src="img/project-2.jpg" alt="Project 2" />
+          </div>
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3>Project Beta</h3>
+              <p>Aplikasi produktivitas berbasis AI untuk manajemen tugas harian.</p>
+              <span class="project-link">Lihat Detail →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 3 -->
+        <a href="#" class="project-card">
+          <div class="project-img">
+            <img src="img/project-3.jpg" alt="Project 3" />
+          </div>
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3>Project Gamma</h3>
+              <p>Platform e-commerce modern dengan integrasi multi-payment gateway.</p>
+              <span class="project-link">Lihat Detail →</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Project 4 -->
+        <a href="#" class="project-card">
+          <div class="project-img">
+            <img src="img/project-4.jpg" alt="Project 4" />
+          </div>
+          <div class="project-overlay">
+            <div class="project-content">
+              <h3>Project Delta</h3>
+              <p>Website company profile interaktif dengan animasi scroll modern.</p>
+              <span class="project-link">Lihat Detail →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
 
   <!-- Placeholder Footer -->
   <div id="footer-placeholder"></div>
 
   <!-- Script untuk navbar dan footer -->
   <script>
-    // Load Navbar
     fetch('component/navbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
 
-    // Load Footer
     fetch('component/footer.html')
       .then(response => response.text())
       .then(data => {
