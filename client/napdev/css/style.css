@@ -1,10 +1,12 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-  --primary: #061431;
+  --primary: #1a1a1a;        /* hitam pekat (pengganti biru) */
   --primary-dark: #000000;
-  --dark: #0f172a;
-  --gray: #64748b;
-  --light: #f8fafc;
+  --dark: #0f0f0f;           /* hitam utama */
+  --gray: #6b6b6b;           /* abu medium */
+  --gray-light: #a3a3a3;     /* abu terang */
+  --gray-lighter: #e5e5e5;   /* abu sangat terang */
+  --light: #f5f5f5;          /* abu muda */
   --white: #ffffff;
   --radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -60,7 +62,7 @@ img {
 }
 
 .navbar.scrolled {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(15, 15, 15, 0.95);
   padding: 12px 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
@@ -130,7 +132,7 @@ img {
 }
 
 .btn-primary:hover {
-  background: #e5e7eb;
+  background: #e5e5e5;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
 }
@@ -163,6 +165,7 @@ section {
   font-weight: 800;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
+  color: var(--dark);
 }
 
 .section-header p {
@@ -176,12 +179,12 @@ section {
   display: block;
   width: 60px;
   height: 4px;
-  background: var(--primary);
+  background: var(--dark);
   border-radius: 2px;
   margin: 20px auto 0;
 }
 
-/* ===== HERO TAGLINE (dipakai di semua hero) ===== */
+/* ===== HERO TAGLINE ===== */
 .hero-tagline {
   font-size: 0.85rem;
   font-weight: 600;
@@ -194,7 +197,7 @@ section {
 /* ===== FOOTER ===== */
 footer {
   background: var(--dark);
-  color: #cbd5e1;
+  color: #a3a3a3;
   padding: 50px 0 24px;
 }
 
@@ -214,7 +217,7 @@ footer {
 .footer-grid p,
 .footer-grid li {
   font-size: 0.92rem;
-  color: #94a3b8;
+  color: #a3a3a3;
   line-height: 1.9;
 }
 
@@ -227,11 +230,11 @@ footer {
 }
 
 .footer-bottom {
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #2a2a2a;
   padding-top: 24px;
   text-align: center;
   font-size: 0.88rem;
-  color: #64748b;
+  color: #6b6b6b;
 }
 
 /* ===== RESPONSIVE BASE ===== */

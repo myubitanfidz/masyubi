@@ -33,6 +33,7 @@
   pointer-events: none;
   user-select: none;
   display: block;
+  filter: grayscale(100%);
 }
 
 .about-hero-overlay {
@@ -64,7 +65,7 @@
 }
 
 .about-hero h1 span {
-  color: #60a5fa;
+  color: #d4d4d4;   /* abu terang (pengganti biru) */
 }
 
 .about-hero-desc {
@@ -98,11 +99,11 @@
   align-items: center;
   justify-content: center;
   font-size: 8rem;
-  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
   border: 8px solid var(--white);
   box-shadow:
-    0 20px 60px rgba(99, 102, 241, 0.35),
-    0 0 0 12px rgba(99, 102, 241, 0.08);
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 0 12px rgba(0, 0, 0, 0.08);
   position: relative;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   cursor: pointer;
@@ -114,7 +115,7 @@
   position: absolute;
   inset: -20px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.25) 0%, transparent 70%);
   z-index: -1;
   animation: pulse 3s ease-in-out infinite;
 }
@@ -133,6 +134,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  filter: grayscale(100%);
 }
 
 .about-brief {
@@ -145,10 +147,11 @@
   letter-spacing: -1px;
   margin-bottom: 24px;
   line-height: 1.15;
+  color: var(--dark);
 }
 
 .about-brief h2 span {
-  color: var(--primary);
+  color: var(--dark);
 }
 
 .about-brief p {
@@ -168,7 +171,7 @@
 
 .stat h4 {
   font-size: 2.25rem;
-  color: var(--primary);
+  color: var(--dark);
   font-weight: 800;
   letter-spacing: -1px;
   line-height: 1;
@@ -185,7 +188,7 @@
 /* ===== BARIS 2: Deskripsi Lengkap ===== */
 .about-full {
   padding: 80px 0;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #e5e5e5;
 }
 
 .about-full-content {
@@ -232,7 +235,7 @@
   display: inline-block;
   width: 6px;
   height: 1em;
-  background: var(--primary);
+  background: var(--dark);
   border-radius: 3px;
 }
 
@@ -283,7 +286,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  color: var(--primary);
+  color: var(--dark);
   font-weight: 800;
   font-size: 1rem;
 }
