@@ -80,11 +80,29 @@
       if (!tube) return;
 
       const TOTAL_CARDS = 16;
+
+      // Data project — tambah/hapus sesuai kebutuhan
       const images = [
-        { src: 'img/game-1.png', title: 'Project Alpha' },
-        { src: 'img/game-2.png', title: 'Project Beta' },
-        { src: 'img/game-3.png', title: 'Project Gamma' },
-        { src: 'img/game-4.png', title: 'Project Delta' }
+        {
+          src: 'img/game-2.png',
+          title: 'Super muslim',
+          desc: 'Game ali jihad'
+        },
+        {
+          src: 'img/game-1.png',
+          title: 'Slime lompat',
+          desc: 'slime kayak rimuru'
+        },
+        {
+          src: 'img/project-3.jpg',
+          title: 'Project Gamma',
+          desc: 'Platform e-commerce modern dengan integrasi multi-payment gateway.'
+        },
+        {
+          src: 'img/project-4.jpg',
+          title: 'Project Delta',
+          desc: 'Website company profile interaktif dengan animasi scroll modern.'
+        }
       ];
 
       for (let i = 0; i < TOTAL_CARDS; i++) {
@@ -96,7 +114,8 @@
         card.innerHTML = `
           <img src="${item.src}" alt="${item.title}" loading="lazy" draggable="false" />
           <div class="tube-card-overlay">
-            <span class="tube-card-title">${item.title}</span>
+            <h3 class="tube-card-title">${item.title}</h3>
+            <p class="tube-card-desc">${item.desc}</p>
           </div>
         `;
 
@@ -110,20 +129,17 @@
       const tube = document.getElementById('tube');
       if (!wrapper || !tube) return;
 
-      // State
       let rotation = 0;
       let velocity = 0;
-      const AUTO_SPEED = 0.03;      // deg per frame (auto-rotate, sangat lambat)
-      const FRICTION = 0.94;         // decay setelah drag
-      const DRAG_SENSITIVITY = 0.2; // deg per pixel
+      const AUTO_SPEED = 0.04;
+      const FRICTION = 0.94;
+      const DRAG_SENSITIVITY = 0.35;
 
       let isDragging = false;
       let lastX = 0;
 
-      // Loop animasi
       function animate() {
         if (!isDragging) {
-          // Kalau velocity dari drag sudah kecil, kembali ke auto speed
           if (Math.abs(velocity) < AUTO_SPEED) {
             velocity = AUTO_SPEED;
           }
@@ -139,7 +155,6 @@
       }
       animate();
 
-      // Drag events
       wrapper.addEventListener('pointerdown', (e) => {
         isDragging = true;
         lastX = e.clientX;
@@ -153,7 +168,6 @@
         const dx = e.clientX - lastX;
         lastX = e.clientX;
 
-        // Drag ke kanan → tabung berputar ke kanan (mengikuti tangan)
         rotation += dx * DRAG_SENSITIVITY;
         velocity = dx * DRAG_SENSITIVITY;
 
@@ -164,14 +178,11 @@
         if (!isDragging) return;
         isDragging = false;
         wrapper.classList.remove('dragging');
-        // velocity tetap → akan decay ke AUTO_SPEED via animate()
       }
 
       wrapper.addEventListener('pointerup', endDrag);
       wrapper.addEventListener('pointercancel', endDrag);
       wrapper.addEventListener('pointerleave', endDrag);
-
-      // Cegah drag gambar default browser
       wrapper.addEventListener('dragstart', (e) => e.preventDefault());
     })();
   </script>

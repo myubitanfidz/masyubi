@@ -155,13 +155,13 @@
 .tube-wrapper {
   position: relative;
   height: 600px;
-  max-width: 1100px;          /* ← batasi lebar supaya cuma 3 kartu utuh + 2 partial */
+  max-width: 1100px;
   margin: 0 auto;
   perspective: 4000px;
   perspective-origin: 50% 50%;
   overflow: hidden;
   cursor: grab;
-  touch-action: pan-y;        /* biar scroll vertikal tetap bisa di mobile */
+  touch-action: pan-y;
   user-select: none;
 }
 
@@ -169,7 +169,7 @@
   cursor: grabbing;
 }
 
-/* Shade kiri & kanan — kartu seperti keluar-masuk */
+/* Shade kiri & kanan */
 .tube-wrapper::before,
 .tube-wrapper::after {
   content: '';
@@ -214,7 +214,6 @@
   height: 390px;
   margin: -195px 0 0 -132.5px;
   transform-style: preserve-3d;
-  /* Rotasi dikontrol JS lewat custom property --rot */
   transform: translateZ(-740px) rotateY(var(--rot, 0deg));
   will-change: transform;
 }
@@ -229,8 +228,8 @@
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  /* Radius 740px, sudut 22.5° per kartu → gap ~24px */
   transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(740px);
+  cursor: pointer;
 }
 
 .tube-card img {
@@ -241,26 +240,62 @@
   filter: grayscale(100%);
   pointer-events: none;
   -webkit-user-drag: none;
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
+.tube-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* ===== OVERLAY — muncul saat hover ===== */
 .tube-card-overlay {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: flex-end;
-  padding: 18px 20px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
   background: linear-gradient(
     180deg,
-    transparent 50%,
-    rgba(0, 0, 0, 0.85) 100%
+    transparent 25%,
+    rgba(0, 0, 0, 0.55) 60%,
+    rgba(0, 0, 0, 0.95) 100%
   );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
 }
 
+.tube-card:hover .tube-card-overlay {
+  opacity: 1;
+}
+
+/* Judul — slide up saat hover */
 .tube-card-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: -0.3px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   color: #ffffff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  transform: translateY(14px);
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+/* Deskripsi — slide up dengan delay kecil */
+.tube-card-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.55;
+  margin: 0;
+  transform: translateY(14px);
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.06s;
+}
+
+.tube-card:hover .tube-card-title,
+.tube-card:hover .tube-card-desc {
+  transform: translateY(0);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -331,12 +366,17 @@
     transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(500px);
   }
 
-  .tube-card-title {
-    font-size: 0.85rem;
+  .tube-card-overlay {
+    padding: 16px;
   }
 
-  .tube-card-overlay {
-    padding: 14px 16px;
+  .tube-card-title {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .tube-card-desc {
+    font-size: 0.75rem;
   }
 }
 
