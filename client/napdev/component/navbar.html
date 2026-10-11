@@ -8,30 +8,3 @@
     </ul>
   </div>
 </nav>
-
-<script>
-  (function () {
-    const navbar = document.getElementById('navbar');
-    if (!navbar) return;
-
-    // Cari hero section di halaman manapun
-    const hero = document.querySelector('.hero, .about-hero, .contact-hero');
-
-    function toggleNavbar() {
-      // Threshold: ketika hero sudah lewat (di bawah viewport atas)
-      const threshold = hero
-        ? hero.offsetHeight - 100
-        : 80;
-
-      if (window.scrollY > threshold) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }
-
-    window.addEventListener('scroll', toggleNavbar, { passive: true });
-    window.addEventListener('resize', toggleNavbar);
-    toggleNavbar();
-  })();
-</script>
