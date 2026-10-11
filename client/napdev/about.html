@@ -38,13 +38,12 @@
                     </div>
                 </div>
 
-                <!-- Kanan: About Singkat (rasio 3) -->
+                <!-- Kanan: About Singkat -->
                 <div class="about-brief">
                     <h2>Napdev</h2>
                     <p>
                         berawal dari sebuah kesukaan bermain game menjadi sebuah passion untuk menciptakan game sendiri.
                     </p>
-
                 </div>
 
             </div>
@@ -86,34 +85,40 @@
                 </div>
             </div>
 
-            <!-- ===== BARIS 3: Visi & Misi ===== -->
+            <!-- ===== BARIS 3: Our Vision & Our Mission ===== -->
             <div class="vision-mission">
             
-                <!-- Visi (kiri) -->
+                <!-- Our Vision — FOTO KIRI, teks kanan -->
                 <div class="vm-block vm-visi">
-                    <h3 class="vm-title">
-                        <span class="vm-bar"></span>visi
-                    </h3>
-                    <p class="vm-desc">
-                        Menjadi perusahaan pengembangan produk digital terdepan di Asia Tenggara
-                        yang dikenal karena kualitas, inovasi, dan dampak positifnya bagi
-                        pertumbuhan bisnis dan masyarakat.
-                    </p>
+                    <div class="vm-img">
+                        <img src="img/foto-bareng.JPG" alt="Our Vision" />
+                    </div>
+                    <div class="vm-text">
+                        <h3 class="vm-title">Our Vision</h3>
+                        <p class="vm-desc">
+                            Menjadi perusahaan pengembangan produk digital terdepan di Asia Tenggara
+                            yang dikenal karena kualitas, inovasi, dan dampak positifnya bagi
+                            pertumbuhan bisnis dan masyarakat.
+                        </p>
+                    </div>
                 </div>
-              
-                <!-- Misi (kanan) -->
+            
+                <!-- Our Mission — teks kiri, FOTO KANAN -->
                 <div class="vm-block vm-misi">
-                    <h3 class="vm-title">
-                        misi<span class="vm-bar"></span>
-                    </h3>
-                    <ul class="mission-list">
-                        <li>Menciptakan produk digital yang berkualitas tinggi dan mudah digunakan.</li>
-                        <li>Membantu bisnis dari berbagai skala untuk bertransformasi secara digital.</li>
-                        <li>Membangun tim yang solid, kolaboratif, dan terus belajar.</li>
-                        <li>Menjaga integritas, transparansi, dan kepuasan klien dalam setiap proyek.</li>
-                    </ul>
+                    <div class="vm-text">
+                        <h3 class="vm-title">Our Mission</h3>
+                        <ul class="mission-list">
+                            <li>Menciptakan produk digital yang berkualitas tinggi dan mudah digunakan.</li>
+                            <li>Membantu bisnis dari berbagai skala untuk bertransformasi secara digital.</li>
+                            <li>Membangun tim yang solid, kolaboratif, dan terus belajar.</li>
+                            <li>Menjaga integritas, transparansi, dan kepuasan klien dalam setiap proyek.</li>
+                        </ul>
+                    </div>
+                    <div class="vm-img">
+                        <img src="img/foto-bareng-2.JPG" alt="Our Mission" />
+                    </div>
                 </div>
-              
+            
             </div>
         </div>
 
@@ -122,21 +127,9 @@
     <!-- Placeholder Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Script untuk navbar dan footer -->
+    <!-- Script untuk navbar, footer, dan slideshow -->
     <script>
-        fetch('component/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
-
-        fetch('component/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-
-            // Fetch navbar
+        // Fetch navbar
         fetch('component/navbar.html')
             .then(response => response.text())
             .then(data => {
@@ -153,10 +146,10 @@
         // ===== Slideshow Siapa Kami =====
         (function () {
             const slides = document.querySelectorAll('.about-full-img .slide');
-            if (slides.length < 2) return; // kalau cuma 1 foto, tidak perlu slideshow
+            if (slides.length < 2) return;
 
             let currentIndex = 0;
-            const INTERVAL = 7000; // 7 detik
+            const INTERVAL = 7000;
 
             setInterval(() => {
                 slides[currentIndex].classList.remove('active');
