@@ -1,12 +1,12 @@
 /* ===== CSS VARIABLES ===== */
 :root {
-  --primary: #1a1a1a;        /* hitam pekat (pengganti biru) */
+  --primary: #1a1a1a;
   --primary-dark: #000000;
-  --dark: #0f0f0f;           /* hitam utama */
-  --gray: #6b6b6b;           /* abu medium */
-  --gray-light: #a3a3a3;     /* abu terang */
-  --gray-lighter: #e5e5e5;   /* abu sangat terang */
-  --light: #f5f5f5;          /* abu muda */
+  --dark: #0f0f0f;
+  --gray: #6b6b6b;
+  --gray-light: #a3a3a3;
+  --gray-lighter: #e5e5e5;
+  --light: #f5f5f5;
   --white: #ffffff;
   --radius: 12px;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -53,21 +53,62 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  padding: 22px 0;
   z-index: 1000;
+  transition: padding 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Layer 1: Gradient scrim + blur (saat di atas hero) */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+/* Layer 2: Hitam full (saat scroll melewati hero) */
+.navbar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #000000;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+/* State saat sudah scroll melewati hero */
 .navbar.scrolled {
-  background: rgba(15, 15, 15, 0.95);
-  padding: 12px 0;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  padding: 14px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
 }
 
+.navbar.scrolled::before {
+  opacity: 0;
+}
+
+.navbar.scrolled::after {
+  opacity: 1;
+}
+
+/* Konten navbar di atas semua layer */
 .nav-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
