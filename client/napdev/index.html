@@ -37,92 +37,143 @@
 
   </section>
 
-  <!-- ===== OUR PROJECT ===== -->
+  <!-- ===== OUR PROJECT — 3D TUBE CAROUSEL ===== -->
   <section class="projects" id="projects">
+
     <div class="container">
-      <div class="section-header">
-        <h2>Our Project</h2>
-        <p>Beberapa karya yang telah kami kerjakan</p>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- Project 1 -->
-        <a href="#" class="project-card">
-          <div class="project-img">
-            <img src="img/project-1.jpg" alt="Project 1" />
-          </div>
-          <div class="project-overlay">
-            <div class="project-content">
-              <h3>Project Alpha</h3>
-              <p>Game RPG mobile dengan sistem pertarungan real-time dan cerita epik.</p>
-              <span class="project-link">Lihat Detail →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Project 2 -->
-        <a href="#" class="project-card">
-          <div class="project-img">
-            <img src="img/project-2.jpg" alt="Project 2" />
-          </div>
-          <div class="project-overlay">
-            <div class="project-content">
-              <h3>Project Beta</h3>
-              <p>Aplikasi produktivitas berbasis AI untuk manajemen tugas harian.</p>
-              <span class="project-link">Lihat Detail →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Project 3 -->
-        <a href="#" class="project-card">
-          <div class="project-img">
-            <img src="img/project-3.jpg" alt="Project 3" />
-          </div>
-          <div class="project-overlay">
-            <div class="project-content">
-              <h3>Project Gamma</h3>
-              <p>Platform e-commerce modern dengan integrasi multi-payment gateway.</p>
-              <span class="project-link">Lihat Detail →</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- Project 4 -->
-        <a href="#" class="project-card">
-          <div class="project-img">
-            <img src="img/project-4.jpg" alt="Project 4" />
-          </div>
-          <div class="project-overlay">
-            <div class="project-content">
-              <h3>Project Delta</h3>
-              <p>Website company profile interaktif dengan animasi scroll modern.</p>
-              <span class="project-link">Lihat Detail →</span>
-            </div>
-          </div>
-        </a>
-
+      <div class="projects-header">
+        <span class="projects-tag">Built by passion</span>
+        <h2 class="projects-title">Projects we're proud of.</h2>
       </div>
     </div>
+
+    <div class="tube-wrapper" id="tube-wrapper">
+      <div class="tube" id="tube">
+        <!-- Kartu di-generate oleh JavaScript -->
+      </div>
+    </div>
+
   </section>
 
   <!-- Placeholder Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Script untuk navbar dan footer -->
+  <!-- Script untuk navbar, footer, dan tube carousel -->
   <script>
+    // Fetch navbar
     fetch('component/navbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
 
+    // Fetch footer
     fetch('component/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
       });
+
+    // ===== Generate tube cards =====
+    (function () {
+      const tube = document.getElementById('tube');
+      if (!tube) return;
+
+      const TOTAL_CARDS = 16;
+      const images = [
+        { src: 'img/game-1.png', title: 'Project Alpha' },
+        { src: 'img/game-2.png', title: 'Project Beta' },
+        { src: 'img/game-3.png', title: 'Project Gamma' },
+        { src: 'img/game-4.png', title: 'Project Delta' }
+      ];
+
+      for (let i = 0; i < TOTAL_CARDS; i++) {
+        const item = images[i % images.length];
+        const card = document.createElement('div');
+        card.className = 'tube-card';
+        card.style.setProperty('--i', i);
+
+        card.innerHTML = `
+          <img src="${item.src}" alt="${item.title}" loading="lazy" draggable="false" />
+          <div class="tube-card-overlay">
+            <span class="tube-card-title">${item.title}</span>
+          </div>
+        `;
+
+        tube.appendChild(card);
+      }
+    })();
+
+    // ===== Drag + auto-rotate tabung =====
+    (function () {
+      const wrapper = document.getElementById('tube-wrapper');
+      const tube = document.getElementById('tube');
+      if (!wrapper || !tube) return;
+
+      // State
+      let rotation = 0;
+      let velocity = 0;
+      const AUTO_SPEED = 0.03;      // deg per frame (auto-rotate, sangat lambat)
+      const FRICTION = 0.94;         // decay setelah drag
+      const DRAG_SENSITIVITY = 0.2; // deg per pixel
+
+      let isDragging = false;
+      let lastX = 0;
+
+      // Loop animasi
+      function animate() {
+        if (!isDragging) {
+          // Kalau velocity dari drag sudah kecil, kembali ke auto speed
+          if (Math.abs(velocity) < AUTO_SPEED) {
+            velocity = AUTO_SPEED;
+          }
+          velocity *= FRICTION;
+          if (Math.abs(velocity) < AUTO_SPEED) {
+            velocity = AUTO_SPEED;
+          }
+          rotation += velocity;
+        }
+
+        tube.style.setProperty('--rot', rotation + 'deg');
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Drag events
+      wrapper.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        lastX = e.clientX;
+        velocity = 0;
+        wrapper.classList.add('dragging');
+        wrapper.setPointerCapture(e.pointerId);
+      });
+
+      wrapper.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - lastX;
+        lastX = e.clientX;
+
+        // Drag ke kanan → tabung berputar ke kanan (mengikuti tangan)
+        rotation += dx * DRAG_SENSITIVITY;
+        velocity = dx * DRAG_SENSITIVITY;
+
+        tube.style.setProperty('--rot', rotation + 'deg');
+      });
+
+      function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('dragging');
+        // velocity tetap → akan decay ke AUTO_SPEED via animate()
+      }
+
+      wrapper.addEventListener('pointerup', endDrag);
+      wrapper.addEventListener('pointercancel', endDrag);
+      wrapper.addEventListener('pointerleave', endDrag);
+
+      // Cegah drag gambar default browser
+      wrapper.addEventListener('dragstart', (e) => e.preventDefault());
+    })();
   </script>
 
 </body>

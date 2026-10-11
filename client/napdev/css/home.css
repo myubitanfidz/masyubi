@@ -68,7 +68,7 @@
 }
 
 .hero h1 span {
-  color: #d4d4d4;   /* abu terang (pengganti biru) */
+  color: #d4d4d4;
 }
 
 .hero-desc {
@@ -122,115 +122,167 @@
   100% { opacity: 0; top: 22px; }
 }
 
-/* ===== OUR PROJECT ===== */
+/* ===== OUR PROJECT — 3D TUBE CAROUSEL ===== */
 .projects {
-  background: var(--white);
-  padding: 100px 0;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-}
-
-.project-card {
-  position: relative;
-  display: block;
-  border-radius: var(--radius);
+  background: #0a0a0a;
+  padding: 120px 0 0;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  text-decoration: none;
+}
+
+.projects-header {
+  margin-bottom: 72px;
+}
+
+.projects-tag {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #d4d4d4;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.projects-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
   color: #ffffff;
-  cursor: pointer;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.4);
+/* ===== WRAPPER — 3D STAGE ===== */
+.tube-wrapper {
+  position: relative;
+  height: 600px;
+  max-width: 1100px;          /* ← batasi lebar supaya cuma 3 kartu utuh + 2 partial */
+  margin: 0 auto;
+  perspective: 4000px;
+  perspective-origin: 50% 50%;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;        /* biar scroll vertikal tetap bisa di mobile */
+  user-select: none;
 }
 
-.project-img {
+.tube-wrapper.dragging {
+  cursor: grabbing;
+}
+
+/* Shade kiri & kanan — kartu seperti keluar-masuk */
+.tube-wrapper::before,
+.tube-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 26%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.tube-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    #0a0a0a 0%,
+    rgba(10, 10, 10, 0.9) 30%,
+    rgba(10, 10, 10, 0.55) 60%,
+    rgba(10, 10, 10, 0.15) 85%,
+    transparent 100%
+  );
+}
+
+.tube-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    #0a0a0a 0%,
+    rgba(10, 10, 10, 0.9) 30%,
+    rgba(10, 10, 10, 0.55) 60%,
+    rgba(10, 10, 10, 0.15) 85%,
+    transparent 100%
+  );
+}
+
+/* ===== TABUNG ===== */
+.tube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 265px;
+  height: 390px;
+  margin: -195px 0 0 -132.5px;
+  transform-style: preserve-3d;
+  /* Rotasi dikontrol JS lewat custom property --rot */
+  transform: translateZ(-740px) rotateY(var(--rot, 0deg));
+  will-change: transform;
+}
+
+/* ===== KARTU ===== */
+.tube-card {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Radius 740px, sudut 22.5° per kartu → gap ~24px */
+  transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(740px);
 }
 
-.project-img img {
+.tube-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
   display: block;
   filter: grayscale(100%);
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
 
-.project-card:hover .project-img img {
-  transform: scale(1.08);
-}
-
-.project-overlay {
+.tube-card-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
   display: flex;
   align-items: flex-end;
-  padding: 32px;
+  padding: 18px 20px;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.95) 100%
+    transparent 50%,
+    rgba(0, 0, 0, 0.85) 100%
   );
-  opacity: 0;
-  transition: opacity 0.4s ease;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-content {
-  transform: translateY(20px);
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-content {
-  transform: translateY(0);
-}
-
-.project-content h3 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 8px;
+.tube-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
   color: #ffffff;
 }
 
-.project-content p {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
-  margin-bottom: 16px;
-  max-width: 90%;
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .tube-wrapper {
+    height: 500px;
+    max-width: 900px;
+    perspective: 3200px;
+  }
+
+  .tube {
+    width: 220px;
+    height: 325px;
+    margin: -162.5px 0 0 -110px;
+    transform: translateZ(-615px) rotateY(var(--rot, 0deg));
+  }
+
+  .tube-card {
+    transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(615px);
+  }
 }
 
-.project-link {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #d4d4d4;   /* abu terang (pengganti biru) */
-  letter-spacing: 0.5px;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-link {
-  transform: translateX(4px);
-}
-
-/* ===== RESPONSIVE HOME ===== */
 @media (max-width: 768px) {
   .hero {
     padding: 100px 0 60px;
@@ -250,28 +302,58 @@
   }
 
   .projects {
-    padding: 60px 0;
+    padding: 80px 0 0;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .projects-header {
+    margin-bottom: 48px;
   }
 
-  .project-overlay {
-    padding: 24px;
-    opacity: 1;
+  .tube-wrapper {
+    height: 420px;
+    max-width: 100%;
+    perspective: 2600px;
   }
 
-  .project-content {
-    transform: translateY(0);
+  .tube-wrapper::before,
+  .tube-wrapper::after {
+    width: 22%;
   }
 
-  .project-content h3 {
-    font-size: 1.2rem;
+  .tube {
+    width: 180px;
+    height: 265px;
+    margin: -132.5px 0 0 -90px;
+    transform: translateZ(-500px) rotateY(var(--rot, 0deg));
   }
 
-  .project-content p {
-    font-size: 0.9rem;
+  .tube-card {
+    transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(500px);
+  }
+
+  .tube-card-title {
+    font-size: 0.85rem;
+  }
+
+  .tube-card-overlay {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tube-wrapper {
+    height: 360px;
+    perspective: 2200px;
+  }
+
+  .tube {
+    width: 150px;
+    height: 220px;
+    margin: -110px 0 -75px;
+    transform: translateZ(-415px) rotateY(var(--rot, 0deg));
+  }
+
+  .tube-card {
+    transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(415px);
   }
 }
