@@ -252,7 +252,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   transition: filter 0.5s ease, transform 0.5s ease;
   pointer-events: none;
   -webkit-user-drag: none;
@@ -260,7 +260,7 @@
 
 .carousel-card:hover img,
 .carousel-card:focus-visible img {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
   transform: scale(1.05);
 }
 
