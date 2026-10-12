@@ -151,7 +151,7 @@
       if (!wrapper || !track) return;
 
       const SPEED = 46.2; // Pixel per detik, 40% lebih cepat dari 33.
-      const CARD_SCALE = 0.9; // Semua kartu diperkecil 10%.
+      const CARD_SCALE = 0.765; // 15% lebih kecil dari ukuran sebelumnya (0.9 × 0.85).
       const HIGHLIGHT_SCALE = 1.15;
       const SCALE_TRANSITION_SPAN = 0.2; // Transisi ukuran memakai 20% jarak antar kartu.
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
