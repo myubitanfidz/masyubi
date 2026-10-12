@@ -154,10 +154,10 @@
 /* ===== CAROUSEL ===== */
 .carousel-wrapper {
   --visible-cards: 4;
-  --carousel-gap: clamp(18px, 3.4vw, 44px);
+  --carousel-gap: clamp(12px, 1.5vw, 20px);
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   height: 500px;
   margin: 0 auto;
   overflow: hidden;
