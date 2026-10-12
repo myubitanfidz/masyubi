@@ -154,19 +154,22 @@
       const CARD_SCALE = 0.765; // 15% lebih kecil dari ukuran sebelumnya (0.9 × 0.85).
       const HIGHLIGHT_SCALE = 1.15;
       const SCALE_TRANSITION_SPAN = 0.2; // Transisi ukuran memakai 20% jarak antar kartu.
+      const CENTER_SHIFT_RATIO = -0.06; // Koreksi visual ke kiri: 6% jarak antar kartu.
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       let wrapperWidth = 0;
       let cardWidth = 0;
       let step = 0;
+      let centerShift = 0;
       let offset = 0;
       let lastTime = null;
 
       function render() {
-        track.style.transform = `translateX(${-offset}px)`;
+        track.style.transform = `translateX(${-offset + centerShift}px)`;
+        const highlightCenter = wrapperWidth / 2 + centerShift;
 
         Array.from(track.children).forEach((slide, i) => {
-          const center = i * step - offset + cardWidth / 2;
-          const distance = Math.abs(center - wrapperWidth / 2);
+          const center = i * step - offset + centerShift + cardWidth / 2;
+          const distance = Math.abs(center - highlightCenter);
 
           // Transisi singkat di batas kartu tepi dan dua kartu tengah.
           // Smoothstep menjaga awal dan akhir perubahan ukuran tetap halus.
@@ -189,6 +192,7 @@
         const oldStep = step;
         wrapperWidth = wrapper.clientWidth;
         step = wrapperWidth / visibleCards;
+        centerShift = step * CENTER_SHIFT_RATIO;
         cardWidth = step - gap;
         track.style.setProperty('--card-width', `${cardWidth}px`);
         offset = oldStep ? offset / oldStep * step : -gap / 2;
