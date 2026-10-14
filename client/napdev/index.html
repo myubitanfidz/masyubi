@@ -37,7 +37,7 @@
 
   </section>
 
-  <!-- ===== OUR PROJECT — FLAT CAROUSEL ===== -->
+  <!-- ===== OUR PROJECT — 3D TUBE CAROUSEL ===== -->
   <section class="projects" id="projects">
 
     <div class="container">
@@ -47,15 +47,15 @@
       </div>
     </div>
 
-    <div class="carousel-wrapper" id="carousel">
-      <div class="carousel-track" id="track">
+    <div class="tube-wrapper" id="tube-wrapper">
+      <div class="tube" id="tube">
         <!-- Kartu di-generate oleh JavaScript -->
       </div>
     </div>
 
   </section>
 
-    <!-- ===== Project We Guide ===== -->
+  <!-- ===== Project We Guide ===== -->
   <section class="guide" id="guide">
     <div class="container">
       <div class="guide-header">
@@ -113,7 +113,7 @@
   <!-- Placeholder Footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Script untuk navbar, footer, dan carousel -->
+  <!-- Script untuk navbar, footer, dan tube carousel -->
   <script>
     // Fetch navbar
     fetch('component/navbar.html')
@@ -129,157 +129,148 @@
         document.getElementById('footer-placeholder').innerHTML = data;
       });
 
-    // ===== Generate carousel =====
+    // ===== Generate tube cards =====
     (function () {
-      const track = document.getElementById('track');
-      if (!track) return;
+      const tube = document.getElementById('tube');
+      if (!tube) return;
 
-      // PETUNJUK EDIT KARTU:
-      // src   = lokasi gambar, title = nama game, desc = deskripsi singkat.
-      // url   = tautan lengkap halaman game (Steam, itch.io, atau situs game).
-      // Contoh: url: 'https://nama-studio.itch.io/nama-game'
-      // Ganti nilai url di setiap project dengan tautan gamenya, di dalam tanda petik.
-      // Kosongkan url jika belum tersedia; kartu tersebut belum bisa diklik.
-      // Cukup edit empat project ini. Kartu berulang mengikuti data secara otomatis.
-      const projects = [
+      const TOTAL_CARDS = 16;
+
+      // Data project — tambah/hapus sesuai kebutuhan
+      const images = [
         {
           src: 'img/game-2.png',
-          title: 'Super Muslim',
-          desc: 'Game aksi yang bisa dimainkan langsung di browser.',
-          url: 'https://napdev.itch.io/supermoslem' // Ganti tautan Super Muslim di sini.
+          title: 'Super muslim',
+          desc: 'Game ali jihad'
         },
         {
-          src: 'https://img.itch.zone/aW1nLzI4MTI4MzYwLmdpZg==/315x250%23c/bsXNZc.gif',
-          title: 'Slimy Spin Spear',
-          desc: 'Slime oranye dengan tombak ungu yang berputar.',
-          url: 'https://napdev.itch.io/slimespear' // Ganti tautan Slimy Spin Spear di sini.
+          src: 'img/game-1.png',
+          title: 'Slime lompat',
+          desc: 'slime kayak rimuru'
         },
         {
-          src: 'https://img.itch.zone/aW1nLzI3Mzk2MTIzLmdpZg==/315x250%23c/mx%2FX8V.gif',
-          title: 'Project : OUTFRAME',
-          desc: 'Game aksi Napdev yang bisa dimainkan di browser.',
-          url: 'https://napdev.itch.io/project-outframe' // Ganti tautan project ketiga di sini.
+          src: 'img/project-3.jpg',
+          title: 'Project Gamma',
+          desc: 'Platform e-commerce modern dengan integrasi multi-payment gateway.'
         },
         {
-          src: 'https://img.itch.zone/aW1nLzIxNDI1MzQxLnBuZw==/315x250%23c/6elDDF.png',
-          title: 'Sepertiga Malam',
-          desc: 'Petualangan membawa cahaya di tengah hutan gelap dan lebat.',
-          url: 'https://napdev.itch.io/sepertiga-malam' // Ganti tautan project keempat di sini.
+          src: 'img/project-4.jpg',
+          title: 'Project Delta',
+          desc: 'Website company profile interaktif dengan animasi scroll modern.'
         }
       ];
 
-      // 12 slide total (loop mulus) — kelipatan dari jumlah project
-      const TOTAL_SLIDES = 12;
+      for (let i = 0; i < TOTAL_CARDS; i++) {
+        const item = images[i % images.length];
+        const card = document.createElement('div');
+        card.className = 'tube-card';
+        card.style.setProperty('--i', i);
 
-      for (let i = 0; i < TOTAL_SLIDES; i++) {
-        const item = projects[i % projects.length];
-
-        const slide = document.createElement('div');
-        slide.className = 'carousel-slide';
-        slide.innerHTML = `
-          <a class="carousel-card" draggable="false">
-            <img src="${item.src}" alt="${item.title}" loading="lazy" draggable="false" />
-            <div class="carousel-card-overlay">
-              <h3 class="carousel-card-title">${item.title}</h3>
-              <p class="carousel-card-desc">${item.desc}</p>
-              ${item.url ? '<span class="carousel-card-link">Lihat game ↗</span>' : ''}
-            </div>
-          </a>
+        card.innerHTML = `
+          <img src="${item.src}" alt="${item.title}" loading="lazy" draggable="false" />
+          <div class="tube-card-overlay">
+            <h3 class="tube-card-title">${item.title}</h3>
+            <p class="tube-card-desc">${item.desc}</p>
+          </div>
         `;
 
-        const card = slide.firstElementChild;
-        if (item.url.trim()) {
-          card.href = item.url.trim();
-          card.target = '_blank';
-          card.rel = 'noopener noreferrer';
-          card.setAttribute('aria-label', `Lihat game ${item.title} (tab baru)`);
-        }
-
-        track.appendChild(slide);
+        tube.appendChild(card);
       }
     })();
 
-    // ===== Animasi carousel =====
+    // ===== Drag + auto-rotate tabung + pause saat hover card =====
     (function () {
-      const wrapper = document.getElementById('carousel');
-      const track = document.getElementById('track');
-      if (!wrapper || !track) return;
+      const wrapper = document.getElementById('tube-wrapper');
+      const tube = document.getElementById('tube');
+      if (!wrapper || !tube) return;
 
-      const SPEED = 46.2; // Pixel per detik, 40% lebih cepat dari 33.
-      const CARD_SCALE = 0.765; // 15% lebih kecil dari ukuran sebelumnya (0.9 × 0.85).
-      const HIGHLIGHT_SCALE = 1.15;
-      const SCALE_TRANSITION_SPAN = 0.2; // Transisi ukuran memakai 20% jarak antar kartu.
-      const CENTER_SHIFT_RATIO = -0.06; // Koreksi visual ke kiri: 6% jarak antar kartu.
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      let wrapperWidth = 0;
-      let cardWidth = 0;
-      let step = 0;
-      let centerShift = 0;
-      let offset = 0;
-      let lastTime = null;
+      let rotation = 0;
+      let velocity = 0;
+      const AUTO_SPEED = 0.04;
+      const FRICTION = 0.94;
+      const DRAG_SENSITIVITY = 0.35;
 
-      function render() {
-        track.style.transform = `translateX(${-offset + centerShift}px)`;
-        const highlightCenter = wrapperWidth / 2 + centerShift;
+      let isDragging = false;
+      let isHoveringCard = false; // pause hanya saat hover card
+      let lastX = 0;
 
-        Array.from(track.children).forEach((slide, i) => {
-          const center = i * step - offset + centerShift + cardWidth / 2;
-          const distance = Math.abs(center - highlightCenter);
+      // Deteksi hover spesifik ke .tube-card
+      tube.addEventListener('pointerover', (e) => {
+        if (e.target.closest('.tube-card')) {
+          isHoveringCard = true;
+        }
+      });
 
-          // Transisi singkat di batas kartu tepi dan dua kartu tengah.
-          // Smoothstep menjaga awal dan akhir perubahan ukuran tetap halus.
-          const transitionStart = step * (1 - SCALE_TRANSITION_SPAN / 2);
-          const transitionWidth = step * SCALE_TRANSITION_SPAN;
-          const t = Math.max(0, Math.min(1, (distance - transitionStart) / transitionWidth));
-          const eased = t * t * (3 - 2 * t);
-          const highlight = 1 - eased;
-          const card = slide.firstElementChild;
-          card.style.transform = `scale(${CARD_SCALE * (1 + (HIGHLIGHT_SCALE - 1) * highlight)})`;
-          card.style.opacity = 0.65 + 0.35 * highlight;
-          slide.style.zIndex = Math.round(highlight * 10);
-        });
-      }
+      tube.addEventListener('pointerout', (e) => {
+        const fromCard = e.target.closest('.tube-card');
+        const toCard = e.relatedTarget && e.relatedTarget.closest
+          ? e.relatedTarget.closest('.tube-card')
+          : null;
 
-      function resize() {
-        const styles = getComputedStyle(wrapper);
-        const gap = parseFloat(getComputedStyle(track).columnGap);
-        const visibleCards = parseFloat(styles.getPropertyValue('--visible-cards'));
-        const oldStep = step;
-        wrapperWidth = wrapper.clientWidth;
-        step = wrapperWidth / visibleCards;
-        centerShift = step * CENTER_SHIFT_RATIO;
-        cardWidth = step - gap;
-        track.style.setProperty('--card-width', `${cardWidth}px`);
-        offset = oldStep ? offset / oldStep * step : -gap / 2;
-        render();
-      }
+        if (fromCard && !toCard) {
+          isHoveringCard = false;
+        }
+      });
 
-      new ResizeObserver(resize).observe(wrapper);
-      resize();
+      // Cadangan untuk browser lama / kalau pointerover tidak jalan
+      tube.addEventListener('mouseover', (e) => {
+        if (e.target.closest('.tube-card')) isHoveringCard = true;
+      });
+      tube.addEventListener('mouseout', (e) => {
+        const fromCard = e.target.closest('.tube-card');
+        const toCard = e.relatedTarget && e.relatedTarget.closest
+          ? e.relatedTarget.closest('.tube-card')
+          : null;
+        if (fromCard && !toCard) isHoveringCard = false;
+      });
 
-      function animate(time) {
-        const elapsed = lastTime === null ? 0 : Math.min((time - lastTime) / 1000, 0.05);
-        lastTime = time;
-
-        // Area kosong dan celah tidak menghentikan carousel.
-        const hoveredCard = track.querySelector('.carousel-card:hover');
-        const focusedCard = track.contains(document.activeElement);
-        if (!hoveredCard && !focusedCard && !reducedMotion.matches && !document.hidden) {
-          offset += SPEED * elapsed;
-
-          // Pindahkan kartu hanya setelah seluruh kartu keluar dari layar.
-          while (step > 0 && offset > cardWidth + 20) {
-            track.appendChild(track.firstElementChild);
-            offset -= step;
+      function animate() {
+        if (!isDragging && !isHoveringCard) {
+          if (Math.abs(velocity) < AUTO_SPEED) {
+            velocity = AUTO_SPEED;
           }
-
-          render();
+          velocity *= FRICTION;
+          if (Math.abs(velocity) < AUTO_SPEED) {
+            velocity = AUTO_SPEED;
+          }
+          rotation += velocity;
         }
 
+        tube.style.setProperty('--rot', rotation + 'deg');
         requestAnimationFrame(animate);
       }
+      animate();
 
-      requestAnimationFrame(animate);
+      wrapper.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        lastX = e.clientX;
+        velocity = 0;
+        wrapper.classList.add('dragging');
+        wrapper.setPointerCapture(e.pointerId);
+      });
+
+      wrapper.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+
+        const dx = e.clientX - lastX;
+        lastX = e.clientX;
+
+        rotation += dx * DRAG_SENSITIVITY;
+        velocity = dx * DRAG_SENSITIVITY;
+
+        tube.style.setProperty('--rot', rotation + 'deg');
+      });
+
+      function endDrag() {
+        if (!isDragging) return;
+        isDragging = false;
+        wrapper.classList.remove('dragging');
+      }
+
+      wrapper.addEventListener('pointerup', endDrag);
+      wrapper.addEventListener('pointercancel', endDrag);
+      wrapper.addEventListener('pointerleave', endDrag);
+      wrapper.addEventListener('dragstart', (e) => e.preventDefault());
     })();
   </script>
 

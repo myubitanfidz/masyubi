@@ -122,10 +122,10 @@
   100% { opacity: 0; top: 22px; }
 }
 
-/* ===== OUR PROJECT — FLAT CAROUSEL ===== */
+/* ===== OUR PROJECT — 3D TUBE CAROUSEL ===== */
 .projects {
   background: #0a0a0a;
-  padding: 120px 0 100px;
+  padding: 120px 0 0;
   overflow: hidden;
 }
 
@@ -151,170 +151,152 @@
   color: #ffffff;
 }
 
-/* ===== CAROUSEL ===== */
-.carousel-wrapper {
-  --visible-cards: 4;
-  --carousel-gap: clamp(12px, 1.5vw, 20px);
+/* ===== WRAPPER — 3D STAGE ===== */
+.tube-wrapper {
   position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 500px;
+  height: 600px;
+  max-width: 1100px;
   margin: 0 auto;
+  perspective: 4000px;
+  perspective-origin: 50% 50%;
   overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
 }
 
-/* Shade kiri & kanan — kartu seperti keluar-masuk */
-.carousel-wrapper::before,
-.carousel-wrapper::after {
+.tube-wrapper.dragging {
+  cursor: grabbing;
+}
+
+/* Shade kiri & kanan */
+.tube-wrapper::before,
+.tube-wrapper::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 22%;
+  width: 26%;
   z-index: 10;
   pointer-events: none;
 }
 
-.carousel-wrapper::before {
+.tube-wrapper::before {
   left: 0;
   background: linear-gradient(
     90deg,
     #0a0a0a 0%,
     rgba(10, 10, 10, 0.9) 30%,
-    rgba(10, 10, 10, 0.55) 65%,
+    rgba(10, 10, 10, 0.55) 60%,
+    rgba(10, 10, 10, 0.15) 85%,
     transparent 100%
   );
 }
 
-.carousel-wrapper::after {
+.tube-wrapper::after {
   right: 0;
   background: linear-gradient(
     270deg,
     #0a0a0a 0%,
     rgba(10, 10, 10, 0.9) 30%,
-    rgba(10, 10, 10, 0.55) 65%,
+    rgba(10, 10, 10, 0.55) 60%,
+    rgba(10, 10, 10, 0.15) 85%,
     transparent 100%
   );
 }
 
-/* Track — flex horizontal */
-.carousel-track {
+/* ===== TABUNG ===== */
+.tube {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  gap: var(--carousel-gap);
+  top: 50%;
+  left: 50%;
+  width: 265px;
+  height: 390px;
+  margin: -195px 0 0 -132.5px;
+  transform-style: preserve-3d;
+  transform: translateZ(-740px) rotateY(var(--rot, 0deg));
   will-change: transform;
-  pointer-events: none;
 }
 
-/* Slide — wrapper tetap ukuran */
-.carousel-slide {
-  flex: 0 0 var(--card-width, 260px);
-  height: 420px;
-  position: relative;
-}
-
-/* Card di dalam slide — kena scale & opacity dari JS */
-.carousel-card {
+/* ===== KARTU ===== */
+.tube-card {
   position: absolute;
   inset: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   background: #1a1a1a;
-  box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(740px);
   cursor: pointer;
-  transform-origin: center center;
-  pointer-events: auto;
-  will-change: transform, opacity;
 }
 
-.carousel-card:not([href]) {
-  cursor: default;
-}
-
-.carousel-card:focus-visible {
-  outline: 3px solid #ffffff;
-  outline-offset: 4px;
-}
-
-.carousel-card-link {
-  margin-top: 12px;
-  color: #ffffff;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.carousel-card img {
+.tube-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: grayscale(0%);
-  transition: filter 0.5s ease, transform 0.5s ease;
+  filter: grayscale(100%);
   pointer-events: none;
   -webkit-user-drag: none;
+  transition: filter 0.5s ease, transform 0.5s ease;
 }
 
-.carousel-card:hover img,
-.carousel-card:focus-visible img {
-  filter: grayscale(100%);
+.tube-card:hover img {
+  filter: grayscale(0%);
   transform: scale(1.05);
 }
 
-/* Overlay — muncul saat hover */
-.carousel-card-overlay {
+/* ===== OVERLAY — muncul saat hover ===== */
+.tube-card-overlay {
   position: absolute;
   inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 22px;
+  padding: 24px;
   background: linear-gradient(
     180deg,
-    transparent 30%,
+    transparent 25%,
     rgba(0, 0, 0, 0.55) 60%,
     rgba(0, 0, 0, 0.95) 100%
   );
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.45s ease;
   pointer-events: none;
 }
 
-.carousel-card:hover .carousel-card-overlay,
-.carousel-card:focus-visible .carousel-card-overlay {
+.tube-card:hover .tube-card-overlay {
   opacity: 1;
 }
 
-.carousel-card-title {
-  font-size: 1.1rem;
+/* Judul — slide up saat hover */
+.tube-card-title {
+  font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.5px;
   color: #ffffff;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   line-height: 1.2;
-  transform: translateY(12px);
-  transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+  transform: translateY(14px);
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1);
 }
 
-.carousel-card-desc {
+/* Deskripsi — slide up dengan delay kecil */
+.tube-card-desc {
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.55;
   margin: 0;
-  transform: translateY(12px);
-  transition: transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) 0.05s;
+  transform: translateY(14px);
+  transition: transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.06s;
 }
 
-.carousel-card:hover .carousel-card-title,
-.carousel-card:hover .carousel-card-desc,
-.carousel-card:focus-visible .carousel-card-title,
-.carousel-card:focus-visible .carousel-card-desc {
+.tube-card:hover .tube-card-title,
+.tube-card:hover .tube-card-desc {
   transform: translateY(0);
 }
-
 
 /* ===== GUIDE SECTION (Project we help to create) ===== */
 .guide {
@@ -345,7 +327,7 @@
 /* Grid 3 gambar sejajar ke samping */
 .guide-grid {
   display: flex;
-  flex-wrap: nowrap;        /* paksa tetap satu baris */
+  flex-wrap: nowrap;
   gap: 20px;
   justify-content: center;
   margin-bottom: 32px;
@@ -353,7 +335,7 @@
 
 .guide-card {
   flex: 1;
-  min-width: 0;             /* biar bisa menyusut */
+  min-width: 0;
   position: relative;
   border-radius: 14px;
   overflow: hidden;
@@ -435,16 +417,23 @@
   color: #ffffff;
 }
 
-
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .carousel-wrapper {
-    height: 440px;
+  .tube-wrapper {
+    height: 500px;
+    max-width: 900px;
+    perspective: 3200px;
   }
 
-  .carousel-slide {
-    height: 360px;
+  .tube {
+    width: 220px;
+    height: 325px;
+    margin: -162.5px 0 0 -110px;
+    transform: translateZ(-615px) rotateY(var(--rot, 0deg));
+  }
+
+  .tube-card {
+    transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(615px);
   }
 }
 
@@ -467,51 +456,48 @@
   }
 
   .projects {
-    padding: 80px 0 60px;
+    padding: 80px 0 0;
   }
 
   .projects-header {
     margin-bottom: 48px;
   }
 
-  .carousel-wrapper {
-    --visible-cards: 2;
-    height: 380px;
+  .tube-wrapper {
+    height: 420px;
+    max-width: 100%;
+    perspective: 2600px;
   }
 
-  .carousel-wrapper::before,
-  .carousel-wrapper::after {
-    width: 20%;
+  .tube-wrapper::before,
+  .tube-wrapper::after {
+    width: 22%;
   }
 
-  .carousel-slide {
-    height: 300px;
+  .tube {
+    width: 180px;
+    height: 265px;
+    margin: -132.5px 0 0 -90px;
+    transform: translateZ(-500px) rotateY(var(--rot, 0deg));
   }
 
-  .carousel-card-title {
+  .tube-card {
+    transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(500px);
+  }
+
+  .tube-card-overlay {
+    padding: 16px;
+  }
+
+  .tube-card-title {
     font-size: 1rem;
+    margin-bottom: 6px;
   }
 
-  .carousel-card-desc {
+  .tube-card-desc {
     font-size: 0.75rem;
   }
 
-  .carousel-card-overlay {
-    padding: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-wrapper {
-    height: 340px;
-  }
-
-  .carousel-slide {
-    height: 260px;
-  }
-}
-
-@media (max-width: 768px) {
   .guide {
     padding: 80px 0 60px;
   }
@@ -526,5 +512,23 @@
 
   .guide-card-overlay {
     padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tube-wrapper {
+    height: 360px;
+    perspective: 2200px;
+  }
+
+  .tube {
+    width: 150px;
+    height: 220px;
+    margin: -110px 0 -75px;
+    transform: translateZ(-415px) rotateY(var(--rot, 0deg));
+  }
+
+  .tube-card {
+    transform: rotateY(calc(var(--i) * 22.5deg)) translateZ(415px);
   }
 }
