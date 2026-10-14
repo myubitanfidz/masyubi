@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games — Napdev</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/guide.css">
+</head>
+<body>
+
+<!-- Placeholder Navbar -->
+<div id="navbar-placeholder"></div>
+
+<!-- ===== GAMES SHOWCASE ===== -->
+<section class="games" id="games">
+
+  <div class="games-container">
+
+    <!-- Header -->
+    <div class="games-header">
+      <div class="games-header-left">
+        <span class="games-tag">All games</span>
+        <h1 class="games-title">Browse our games</h1>
+        <p class="games-subtitle">Kumpulan game yang dikembangkan oleh Napdev — dimainkan langsung di browser.</p>
+      </div>
+
+      <!-- Filter / Sort -->
+      <div class="games-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="action">Action</button>
+        <button class="filter-btn" data-filter="adventure">Adventure</button>
+        <button class="filter-btn" data-filter="casual">Casual</button>
+      </div>
+    </div>
+
+    <!-- ===== GRID GAMES ===== -->
+    <!-- 
+      PETUNJUK EDIT:
+      - Ganti src        = link/gambar thumbnail game
+      - Ganti judul      = nama game
+      - Ganti author     = nama developer
+      - Ganti harga      = harga (isi "Free" kalau gratis)
+      - Ganti href       = link halaman game (Steam / itch.io)
+      - Ganti data-tag   = kategori (action / adventure / casual)
+      Duplikat blok <a class="game-card">...</a> untuk menambah game baru.
+    -->
+    <div class="games-grid" id="gamesGrid">
+
+      <a class="game-card" data-tag="action" href="https://napdev.itch.io/supermoslem" target="_blank" rel="noopener noreferrer">
+        <div class="game-thumb">
+          <img src="../img/game-2.png" alt="Super Muslim" loading="lazy" draggable="false" />
+          <div class="game-price">Free</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">Super Muslim</h3>
+          <p class="game-author">by <span>Napdev</span></p>
+          <p class="game-tag">Action · Platformer</p>
+        </div>
+      </a>
+
+      <a class="game-card" data-tag="action" href="https://napdev.itch.io/slimespear" target="_blank" rel="noopener noreferrer">
+        <div class="game-thumb">
+          <img src="https://img.itch.zone/aW1nLzI4MTI4MzYwLmdpZg==/315x250%23c/bsXNZc.gif" alt="Slimy Spin Spear" loading="lazy" draggable="false" />
+          <div class="game-price">Free</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">Slimy Spin Spear</h3>
+          <p class="game-author">by <span>Napdev</span></p>
+          <p class="game-tag">Action · Arcade</p>
+        </div>
+      </a>
+
+      <a class="game-card" data-tag="action" href="https://napdev.itch.io/project-outframe" target="_blank" rel="noopener noreferrer">
+        <div class="game-thumb">
+          <img src="https://img.itch.zone/aW1nLzI3Mzk2MTIzLmdpZg==/315x250%23c/mx%2FX8V.gif" alt="Project : OUTFRAME" loading="lazy" draggable="false" />
+          <div class="game-price">Free</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">Project : OUTFRAME</h3>
+          <p class="game-author">by <span>Napdev</span></p>
+          <p class="game-tag">Action · Shooter</p>
+        </div>
+      </a>
+
+      <a class="game-card" data-tag="adventure" href="https://napdev.itch.io/sepertiga-malam" target="_blank" rel="noopener noreferrer">
+        <div class="game-thumb">
+          <img src="https://img.itch.zone/aW1nLzIxNDI1MzQxLnBuZw==/315x250%23c/6elDDF.png" alt="Sepertiga Malam" loading="lazy" draggable="false" />
+          <div class="game-price">Free</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">Sepertiga Malam</h3>
+          <p class="game-author">by <span>Napdev</span></p>
+          <p class="game-tag">Adventure · Puzzle</p>
+        </div>
+      </a>
+
+      <!-- Game tambahan (contoh) — bisa dihapus / diganti -->
+      <a class="game-card" data-tag="casual" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="game-thumb">
+          <img src="https://img.itch.zone/aW1nLzI4MTI4MzYwLmdpZg==/315x250%23c/bsXNZc.gif" alt="Coming Soon" loading="lazy" draggable="false" />
+          <div class="game-price">Soon</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">Coming Soon</h3>
+          <p class="game-author">by <span>Napdev</span></p>
+          <p class="game-tag">Casual · Relaxing</p>
+        </div>
+      </a>
+
+      <a class="game-card" data-tag="adventure" href="#" target="_blank" rel="noopener noreferrer">
+        <div class="game-thumb">
+          <img src="https://img.itch.zone/aW1nLzI3Mzk2MTIzLmdpZg==/315x250%23c/mx%2FX8V.gif" alt="Coming Soon" loading="lazy" draggable="false" />
+          <div class="game-price">Soon</div>
+        </div>
+        <div class="game-info">
+          <h3 class="game-name">Untitled Project</h3>
+          <p class="game-author">by <span>Napdev</span></p>
+          <p class="game-tag">Adventure · Story</p>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Placeholder Footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+// Fetch navbar
+fetch('../component/navbar.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+  });
+
+// Fetch footer
+fetch('../component/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+
+// ===== Filter kategori =====
+(function () {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.game-card');
+  if (!buttons.length) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.tag === filter;
+        card.style.display = match ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
