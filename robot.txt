@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://myubitanfidz.github.io/masyubi/sitemap.xml
+Sitemap: https://masyubi.my.id/sitemap.xml
